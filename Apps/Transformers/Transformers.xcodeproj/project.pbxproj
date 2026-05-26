@@ -1,0 +1,446 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		32C60D3E5DDFB2D71FA32E72 /* HeroKit in Frameworks */ = {isa = PBXBuildFile; productRef = 29411D47914EE00559B4EB17 /* HeroKit */; };
+		7A60203A61AA694C5C2292F5 /* TransformersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D616D6FEB39E479CA9B515 /* TransformersModel.swift */; };
+		A101D578BBCA15417C334435 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A6338248F47EAE40B8D9E /* ContentView.swift */; };
+		A18EDCC75FDB5D230F2B6D20 /* TransformersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E026FD44ECB114BABAA560 /* TransformersApp.swift */; };
+		E8C1E74787D8578F649644E9 /* TransformersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B776F0F311933AF8DF9B9764 /* TransformersTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8CF44F4B3A92F7BAB9381D7C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 750523C2F99C1CE738905DBC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B6CEE3CA25E2E5A977C7EEDE;
+			remoteInfo = Transformers;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		08697EFBA9A43F9184BF09B9 /* HeroKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = HeroKit; path = ../../HeroKit; sourceTree = SOURCE_ROOT; };
+		10D616D6FEB39E479CA9B515 /* TransformersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformersModel.swift; sourceTree = "<group>"; };
+		3B0EB8EDDE4ABDF1BF213CA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		47450DB9AD9ED090DE3E217A /* TransformersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransformersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B4A6338248F47EAE40B8D9E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		65E026FD44ECB114BABAA560 /* TransformersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformersApp.swift; sourceTree = "<group>"; };
+		B776F0F311933AF8DF9B9764 /* TransformersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformersTests.swift; sourceTree = "<group>"; };
+		CDC11AB2C64229A357A208B1 /* Transformers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Transformers.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		642E07D3F0022FA87EBE1C26 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32C60D3E5DDFB2D71FA32E72 /* HeroKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1FF30478CD39B61AC65E5948 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B776F0F311933AF8DF9B9764 /* TransformersTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		7B7820AA6CE97899F1AE2B94 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CDC11AB2C64229A357A208B1 /* Transformers.app */,
+				47450DB9AD9ED090DE3E217A /* TransformersTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8FC6E49BE148B1F0D345748A /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				4B4A6338248F47EAE40B8D9E /* ContentView.swift */,
+				3B0EB8EDDE4ABDF1BF213CA8 /* Info.plist */,
+				65E026FD44ECB114BABAA560 /* TransformersApp.swift */,
+				10D616D6FEB39E479CA9B515 /* TransformersModel.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		B195142EC86F16F13C35A321 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				08697EFBA9A43F9184BF09B9 /* HeroKit */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		B608F30A2C3EE18D2194F108 = {
+			isa = PBXGroup;
+			children = (
+				B195142EC86F16F13C35A321 /* Packages */,
+				8FC6E49BE148B1F0D345748A /* Sources */,
+				1FF30478CD39B61AC65E5948 /* Tests */,
+				7B7820AA6CE97899F1AE2B94 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B6CEE3CA25E2E5A977C7EEDE /* Transformers */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 076DBB7526D4BA9E65DE0646 /* Build configuration list for PBXNativeTarget "Transformers" */;
+			buildPhases = (
+				198194A0B3F3FF813F6F31D5 /* Sources */,
+				642E07D3F0022FA87EBE1C26 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Transformers;
+			packageProductDependencies = (
+				29411D47914EE00559B4EB17 /* HeroKit */,
+			);
+			productName = Transformers;
+			productReference = CDC11AB2C64229A357A208B1 /* Transformers.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D70879F13119A18F66533387 /* TransformersTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2D08C8F4931A2502ED1A778 /* Build configuration list for PBXNativeTarget "TransformersTests" */;
+			buildPhases = (
+				091C704AB073BFD8F51A90E5 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				947B01347F67232792F99608 /* PBXTargetDependency */,
+			);
+			name = TransformersTests;
+			packageProductDependencies = (
+			);
+			productName = TransformersTests;
+			productReference = 47450DB9AD9ED090DE3E217A /* TransformersTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		750523C2F99C1CE738905DBC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					B6CEE3CA25E2E5A977C7EEDE = {
+						DevelopmentTeam = DU52C58N97;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B1996C48952460C70890CCB0 /* Build configuration list for PBXProject "Transformers" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = B608F30A2C3EE18D2194F108;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				F638832539CBAB5BCB98A1D2 /* XCLocalSwiftPackageReference "../../HeroKit" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 7B7820AA6CE97899F1AE2B94 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B6CEE3CA25E2E5A977C7EEDE /* Transformers */,
+				D70879F13119A18F66533387 /* TransformersTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		091C704AB073BFD8F51A90E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8C1E74787D8578F649644E9 /* TransformersTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		198194A0B3F3FF813F6F31D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A101D578BBCA15417C334435 /* ContentView.swift in Sources */,
+				A18EDCC75FDB5D230F2B6D20 /* TransformersApp.swift in Sources */,
+				7A60203A61AA694C5C2292F5 /* TransformersModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		947B01347F67232792F99608 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B6CEE3CA25E2E5A977C7EEDE /* Transformers */;
+			targetProxy = 8CF44F4B3A92F7BAB9381D7C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0A87F2CDCBD04E5414D214ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		22D329F0496A5D1474707E22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DU52C58N97;
+				INFOPLIST_FILE = Sources/Info.plist;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.transformers;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		45A4C8047A53C21F2E7ED5A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DU52C58N97;
+				INFOPLIST_FILE = Sources/Info.plist;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.transformers;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		5BADFA393EC4105ADFD7C58C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.TransformersTests;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Transformers.app/Transformers";
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		6B114585FBDE76A2CD5B3E40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		BE49C49DE18316AB7BCBC3D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.TransformersTests;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Transformers.app/Transformers";
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		076DBB7526D4BA9E65DE0646 /* Build configuration list for PBXNativeTarget "Transformers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45A4C8047A53C21F2E7ED5A6 /* Debug */,
+				22D329F0496A5D1474707E22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B1996C48952460C70890CCB0 /* Build configuration list for PBXProject "Transformers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A87F2CDCBD04E5414D214ED /* Debug */,
+				6B114585FBDE76A2CD5B3E40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B2D08C8F4931A2502ED1A778 /* Build configuration list for PBXNativeTarget "TransformersTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BADFA393EC4105ADFD7C58C /* Debug */,
+				BE49C49DE18316AB7BCBC3D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		F638832539CBAB5BCB98A1D2 /* XCLocalSwiftPackageReference "../../HeroKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../HeroKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		29411D47914EE00559B4EB17 /* HeroKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HeroKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 750523C2F99C1CE738905DBC /* Project object */;
+}

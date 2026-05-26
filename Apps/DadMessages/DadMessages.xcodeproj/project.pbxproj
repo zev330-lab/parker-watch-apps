@@ -1,0 +1,442 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3356FD9EEFB472D14B462D66 /* DadMessagesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458629ADC46D90B922687420 /* DadMessagesTests.swift */; };
+		3C12E57297A068E7658641EC /* DadMessagesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D483AFBF0255231218FF1BC2 /* DadMessagesApp.swift */; };
+		54FB1FDC9928F9D8C191BF84 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1F810B288E9F9E538AF915 /* ContentView.swift */; };
+		EB3601DD5D6797B76DB3D9A2 /* HeroKit in Frameworks */ = {isa = PBXBuildFile; productRef = AA5D049CD28C10F4B71ACE85 /* HeroKit */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1D54E2B529B860B93B202BFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4DF821031D76405CC48D472 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4794EFF872BEB62FED874338;
+			remoteInfo = DadMessages;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		038622006EAEC3E5D74C0B14 /* DadMessagesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DadMessagesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3358C1243287A9D6BA96ADA2 /* HeroKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = HeroKit; path = ../../HeroKit; sourceTree = SOURCE_ROOT; };
+		458629ADC46D90B922687420 /* DadMessagesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadMessagesTests.swift; sourceTree = "<group>"; };
+		4C1F810B288E9F9E538AF915 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		88F64FC8C8E9E3E3C4F8C8A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D483AFBF0255231218FF1BC2 /* DadMessagesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadMessagesApp.swift; sourceTree = "<group>"; };
+		DD5988078E3FFF3CE4748883 /* DadMessages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DadMessages.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E09AFB4D740C700EE8494F8F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB3601DD5D6797B76DB3D9A2 /* HeroKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0C7A946C40E55E37835239CA = {
+			isa = PBXGroup;
+			children = (
+				3067DFD996634F4240147D8A /* Packages */,
+				CAA5BA680C468F8DC2EE16BB /* Sources */,
+				73EF632AC5B23511B0A0A549 /* Tests */,
+				610F0681BA245E7004E0B96C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3067DFD996634F4240147D8A /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				3358C1243287A9D6BA96ADA2 /* HeroKit */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		610F0681BA245E7004E0B96C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DD5988078E3FFF3CE4748883 /* DadMessages.app */,
+				038622006EAEC3E5D74C0B14 /* DadMessagesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		73EF632AC5B23511B0A0A549 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				458629ADC46D90B922687420 /* DadMessagesTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		CAA5BA680C468F8DC2EE16BB /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				4C1F810B288E9F9E538AF915 /* ContentView.swift */,
+				D483AFBF0255231218FF1BC2 /* DadMessagesApp.swift */,
+				88F64FC8C8E9E3E3C4F8C8A6 /* Info.plist */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4794EFF872BEB62FED874338 /* DadMessages */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 51C30967A71E26425627E740 /* Build configuration list for PBXNativeTarget "DadMessages" */;
+			buildPhases = (
+				077BA54E243B082BE42BF859 /* Sources */,
+				E09AFB4D740C700EE8494F8F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DadMessages;
+			packageProductDependencies = (
+				AA5D049CD28C10F4B71ACE85 /* HeroKit */,
+			);
+			productName = DadMessages;
+			productReference = DD5988078E3FFF3CE4748883 /* DadMessages.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B6B1282AC93FFAA0E05994C4 /* DadMessagesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5334B16A54198A0069A4C60C /* Build configuration list for PBXNativeTarget "DadMessagesTests" */;
+			buildPhases = (
+				1B9CEB56D61C9879F3AA9294 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				860A2850AF6E0444655CC2C4 /* PBXTargetDependency */,
+			);
+			name = DadMessagesTests;
+			packageProductDependencies = (
+			);
+			productName = DadMessagesTests;
+			productReference = 038622006EAEC3E5D74C0B14 /* DadMessagesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B4DF821031D76405CC48D472 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					4794EFF872BEB62FED874338 = {
+						DevelopmentTeam = DU52C58N97;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 13BCEF79983D897787474E9E /* Build configuration list for PBXProject "DadMessages" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 0C7A946C40E55E37835239CA;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				D3DB16E409DDD8805AF70A57 /* XCLocalSwiftPackageReference "../../HeroKit" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 610F0681BA245E7004E0B96C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4794EFF872BEB62FED874338 /* DadMessages */,
+				B6B1282AC93FFAA0E05994C4 /* DadMessagesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		077BA54E243B082BE42BF859 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54FB1FDC9928F9D8C191BF84 /* ContentView.swift in Sources */,
+				3C12E57297A068E7658641EC /* DadMessagesApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B9CEB56D61C9879F3AA9294 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3356FD9EEFB472D14B462D66 /* DadMessagesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		860A2850AF6E0444655CC2C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4794EFF872BEB62FED874338 /* DadMessages */;
+			targetProxy = 1D54E2B529B860B93B202BFE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1D11A499A1D7CF8AF022BDC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		36E53C1BC0F75202532436D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		6339EA57ECDF7A6B112EA9C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.DadMessagesTests;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DadMessages.app/DadMessages";
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		A440E8CB5BD58B13CF81F3A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.DadMessagesTests;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DadMessages.app/DadMessages";
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		D444A003EBA697B2A1BEDB8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DU52C58N97;
+				INFOPLIST_FILE = Sources/Info.plist;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.dadmessages;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		E78FED6391A40F3C11FFAAB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DU52C58N97;
+				INFOPLIST_FILE = Sources/Info.plist;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.dadmessages;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		13BCEF79983D897787474E9E /* Build configuration list for PBXProject "DadMessages" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D11A499A1D7CF8AF022BDC4 /* Debug */,
+				36E53C1BC0F75202532436D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		51C30967A71E26425627E740 /* Build configuration list for PBXNativeTarget "DadMessages" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D444A003EBA697B2A1BEDB8F /* Debug */,
+				E78FED6391A40F3C11FFAAB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5334B16A54198A0069A4C60C /* Build configuration list for PBXNativeTarget "DadMessagesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6339EA57ECDF7A6B112EA9C8 /* Debug */,
+				A440E8CB5BD58B13CF81F3A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		D3DB16E409DDD8805AF70A57 /* XCLocalSwiftPackageReference "../../HeroKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../HeroKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AA5D049CD28C10F4B71ACE85 /* HeroKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HeroKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = B4DF821031D76405CC48D472 /* Project object */;
+}

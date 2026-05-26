@@ -1,0 +1,442 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		76037E731FFE9592ED2E83BF /* HappyThingsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9059659BFC5213EC068B5E1B /* HappyThingsApp.swift */; };
+		8B6F49F33B93F612FE311EC0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2DBD8438435E430DB9528C /* ContentView.swift */; };
+		DDE603D46FE6BF3307A716E6 /* HeroKit in Frameworks */ = {isa = PBXBuildFile; productRef = 02352A5B557566DD97147A6F /* HeroKit */; };
+		E928509391A12DD32E7C8572 /* HappyThingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3987C9373EAD5FD5A472C51 /* HappyThingsTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		589816684662BE904EA8C261 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB63F7CA8628D49DEDF00310 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7F6B2089FEA13255FE9AD9E3;
+			remoteInfo = HappyThings;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		27C3112E73BCBD7C0EED983C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2C4A41F5321D6FB65ADA87DD /* HappyThings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappyThings.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6623A26B01330409BD736932 /* HeroKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = HeroKit; path = ../../HeroKit; sourceTree = SOURCE_ROOT; };
+		9059659BFC5213EC068B5E1B /* HappyThingsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappyThingsApp.swift; sourceTree = "<group>"; };
+		DD2DBD8438435E430DB9528C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E3987C9373EAD5FD5A472C51 /* HappyThingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappyThingsTests.swift; sourceTree = "<group>"; };
+		FAFA5813D15B801F9F8BC14E /* HappyThingsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HappyThingsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		93D6E3E5FBE4AFF0E67C8A1E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDE603D46FE6BF3307A716E6 /* HeroKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		763F44A0CF0B1390B9AC20C1 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				E3987C9373EAD5FD5A472C51 /* HappyThingsTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		92E75BBD8C93786809A87D01 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C4A41F5321D6FB65ADA87DD /* HappyThings.app */,
+				FAFA5813D15B801F9F8BC14E /* HappyThingsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9EE1A52946623C8314FF409A = {
+			isa = PBXGroup;
+			children = (
+				B7922EB6041C235D8DE19295 /* Packages */,
+				A0C9D763E0884B22269229D6 /* Sources */,
+				763F44A0CF0B1390B9AC20C1 /* Tests */,
+				92E75BBD8C93786809A87D01 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A0C9D763E0884B22269229D6 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				DD2DBD8438435E430DB9528C /* ContentView.swift */,
+				9059659BFC5213EC068B5E1B /* HappyThingsApp.swift */,
+				27C3112E73BCBD7C0EED983C /* Info.plist */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		B7922EB6041C235D8DE19295 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				6623A26B01330409BD736932 /* HeroKit */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7F6B2089FEA13255FE9AD9E3 /* HappyThings */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E8688F35016B1BD5ADB8E48 /* Build configuration list for PBXNativeTarget "HappyThings" */;
+			buildPhases = (
+				700090B3C9240342812C8141 /* Sources */,
+				93D6E3E5FBE4AFF0E67C8A1E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HappyThings;
+			packageProductDependencies = (
+				02352A5B557566DD97147A6F /* HeroKit */,
+			);
+			productName = HappyThings;
+			productReference = 2C4A41F5321D6FB65ADA87DD /* HappyThings.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DCE0FBDBBE2238AB47932E3F /* HappyThingsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6386C8677705950C06D6AA67 /* Build configuration list for PBXNativeTarget "HappyThingsTests" */;
+			buildPhases = (
+				B10CAEDB1B75AFAE205F4DC8 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7E875D6E975F52AAACF79120 /* PBXTargetDependency */,
+			);
+			name = HappyThingsTests;
+			packageProductDependencies = (
+			);
+			productName = HappyThingsTests;
+			productReference = FAFA5813D15B801F9F8BC14E /* HappyThingsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FB63F7CA8628D49DEDF00310 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					7F6B2089FEA13255FE9AD9E3 = {
+						DevelopmentTeam = DU52C58N97;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 5CE5683792FC948639359A2C /* Build configuration list for PBXProject "HappyThings" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 9EE1A52946623C8314FF409A;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				106579D2DA39CD2CAB7B5F81 /* XCLocalSwiftPackageReference "../../HeroKit" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 92E75BBD8C93786809A87D01 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7F6B2089FEA13255FE9AD9E3 /* HappyThings */,
+				DCE0FBDBBE2238AB47932E3F /* HappyThingsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		700090B3C9240342812C8141 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B6F49F33B93F612FE311EC0 /* ContentView.swift in Sources */,
+				76037E731FFE9592ED2E83BF /* HappyThingsApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B10CAEDB1B75AFAE205F4DC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E928509391A12DD32E7C8572 /* HappyThingsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7E875D6E975F52AAACF79120 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7F6B2089FEA13255FE9AD9E3 /* HappyThings */;
+			targetProxy = 589816684662BE904EA8C261 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		5CBDD8985E44AC0B1F4795FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.HappyThingsTests;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HappyThings.app/HappyThings";
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		610032779BFD0FCAF97ECF73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.HappyThingsTests;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HappyThings.app/HappyThings";
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		77C9934D25715CB7017D7683 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		86F1A63BFE1B1E32C50AB77B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		C429ACE5A4FFB1B8CDEB65E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DU52C58N97;
+				INFOPLIST_FILE = Sources/Info.plist;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.happythings;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		DB65D5AAF8B8567D4645FE97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DU52C58N97;
+				INFOPLIST_FILE = Sources/Info.plist;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.happythings;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5CE5683792FC948639359A2C /* Build configuration list for PBXProject "HappyThings" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77C9934D25715CB7017D7683 /* Debug */,
+				86F1A63BFE1B1E32C50AB77B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6386C8677705950C06D6AA67 /* Build configuration list for PBXNativeTarget "HappyThingsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				610032779BFD0FCAF97ECF73 /* Debug */,
+				5CBDD8985E44AC0B1F4795FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7E8688F35016B1BD5ADB8E48 /* Build configuration list for PBXNativeTarget "HappyThings" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB65D5AAF8B8567D4645FE97 /* Debug */,
+				C429ACE5A4FFB1B8CDEB65E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		106579D2DA39CD2CAB7B5F81 /* XCLocalSwiftPackageReference "../../HeroKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../HeroKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		02352A5B557566DD97147A6F /* HeroKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HeroKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = FB63F7CA8628D49DEDF00310 /* Project object */;
+}

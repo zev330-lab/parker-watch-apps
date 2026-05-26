@@ -1,0 +1,442 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14A337BD174E059D9469B1BE /* KaratePowerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FB1F4617BD096979C5764D /* KaratePowerApp.swift */; };
+		47AA18CBBB2992830E1F5DF1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD8CC0D45D27AF638E7EDCD /* ContentView.swift */; };
+		64B3D827DB6A4B22C8C8AAA2 /* KaratePowerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61D1BE4913F110AB4396147 /* KaratePowerTests.swift */; };
+		D264365985D52323E3AE2F50 /* HeroKit in Frameworks */ = {isa = PBXBuildFile; productRef = A7A0F851D0F915D6CEF6F309 /* HeroKit */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		868D8F087CB240E0A8B4D06B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42E1FBFE155B48E2D1A8F37C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6DC027C3927965F5DC5EBAE1;
+			remoteInfo = KaratePower;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1072AD02589C771D51061481 /* KaratePowerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KaratePowerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B61D1BE4913F110AB4396147 /* KaratePowerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaratePowerTests.swift; sourceTree = "<group>"; };
+		C5FB1F4617BD096979C5764D /* KaratePowerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaratePowerApp.swift; sourceTree = "<group>"; };
+		CBD8CC0D45D27AF638E7EDCD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D6851C6D52B39B6D6C099F29 /* HeroKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = HeroKit; path = ../../HeroKit; sourceTree = SOURCE_ROOT; };
+		DFA90558407EA26AD0B3A21D /* KaratePower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KaratePower.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAFAA4E59A2712F8271AFF1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1892E2EA690A89B005F714CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D264365985D52323E3AE2F50 /* HeroKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03686160212475EE0951FA82 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DFA90558407EA26AD0B3A21D /* KaratePower.app */,
+				1072AD02589C771D51061481 /* KaratePowerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3F96B9BD5407F045B80C4256 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				CBD8CC0D45D27AF638E7EDCD /* ContentView.swift */,
+				FAFAA4E59A2712F8271AFF1B /* Info.plist */,
+				C5FB1F4617BD096979C5764D /* KaratePowerApp.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		691FAC3F43C3C01E98118470 = {
+			isa = PBXGroup;
+			children = (
+				F7B46715B0A0D7A89209E8B3 /* Packages */,
+				3F96B9BD5407F045B80C4256 /* Sources */,
+				A11DE763102DE83CDB9B2F33 /* Tests */,
+				03686160212475EE0951FA82 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A11DE763102DE83CDB9B2F33 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B61D1BE4913F110AB4396147 /* KaratePowerTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		F7B46715B0A0D7A89209E8B3 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				D6851C6D52B39B6D6C099F29 /* HeroKit */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		597597A299142615C5F566AB /* KaratePowerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD57AA2AD843B6E887C9F6EC /* Build configuration list for PBXNativeTarget "KaratePowerTests" */;
+			buildPhases = (
+				5F5442C265BA63A723335EEE /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1567FEAEF8D4E5E93130728A /* PBXTargetDependency */,
+			);
+			name = KaratePowerTests;
+			packageProductDependencies = (
+			);
+			productName = KaratePowerTests;
+			productReference = 1072AD02589C771D51061481 /* KaratePowerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6DC027C3927965F5DC5EBAE1 /* KaratePower */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F36D713CD13B19704CA90150 /* Build configuration list for PBXNativeTarget "KaratePower" */;
+			buildPhases = (
+				ECC848B3D47A8BFB646A6793 /* Sources */,
+				1892E2EA690A89B005F714CD /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KaratePower;
+			packageProductDependencies = (
+				A7A0F851D0F915D6CEF6F309 /* HeroKit */,
+			);
+			productName = KaratePower;
+			productReference = DFA90558407EA26AD0B3A21D /* KaratePower.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		42E1FBFE155B48E2D1A8F37C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					6DC027C3927965F5DC5EBAE1 = {
+						DevelopmentTeam = DU52C58N97;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 0557871C1B43FE04BDB8596F /* Build configuration list for PBXProject "KaratePower" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 691FAC3F43C3C01E98118470;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				DED7D37B463EE1E19971C8BD /* XCLocalSwiftPackageReference "../../HeroKit" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 03686160212475EE0951FA82 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6DC027C3927965F5DC5EBAE1 /* KaratePower */,
+				597597A299142615C5F566AB /* KaratePowerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5F5442C265BA63A723335EEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64B3D827DB6A4B22C8C8AAA2 /* KaratePowerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECC848B3D47A8BFB646A6793 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47AA18CBBB2992830E1F5DF1 /* ContentView.swift in Sources */,
+				14A337BD174E059D9469B1BE /* KaratePowerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1567FEAEF8D4E5E93130728A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6DC027C3927965F5DC5EBAE1 /* KaratePower */;
+			targetProxy = 868D8F087CB240E0A8B4D06B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		22E0F5A56D22633AD18EB04A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DU52C58N97;
+				INFOPLIST_FILE = Sources/Info.plist;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.karatepower;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		266B637323EEBC7BAF5485EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		809234328C500B8652C9D4DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.KaratePowerTests;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KaratePower.app/KaratePower";
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		8ED8D9CC99F8313A1257BD0F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DU52C58N97;
+				INFOPLIST_FILE = Sources/Info.plist;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.karatepower;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		A17393979F7F9672E9FB9FAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		D240B1E976A6A2AC062CAAC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.KaratePowerTests;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KaratePower.app/KaratePower";
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0557871C1B43FE04BDB8596F /* Build configuration list for PBXProject "KaratePower" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A17393979F7F9672E9FB9FAD /* Debug */,
+				266B637323EEBC7BAF5485EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		BD57AA2AD843B6E887C9F6EC /* Build configuration list for PBXNativeTarget "KaratePowerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				809234328C500B8652C9D4DB /* Debug */,
+				D240B1E976A6A2AC062CAAC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F36D713CD13B19704CA90150 /* Build configuration list for PBXNativeTarget "KaratePower" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8ED8D9CC99F8313A1257BD0F /* Debug */,
+				22E0F5A56D22633AD18EB04A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		DED7D37B463EE1E19971C8BD /* XCLocalSwiftPackageReference "../../HeroKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../HeroKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A7A0F851D0F915D6CEF6F309 /* HeroKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HeroKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 42E1FBFE155B48E2D1A8F37C /* Project object */;
+}
