@@ -1,0 +1,442 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		032C142E3F1EAA702D645F9C /* PowerUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB664A385867DD05C29C895B /* PowerUpTests.swift */; };
+		AA8FAFFF737D10A4266B5645 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D570DAB1D7B9F884E86B0A /* ContentView.swift */; };
+		B121483FF52309381CF56B4D /* HeroKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1713A355B0311C4D8B5C0579 /* HeroKit */; };
+		B2704B777D53664064AA5868 /* PowerUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5187C269FA59A2A8A8F9EAA9 /* PowerUpApp.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AD09F43DB6CBB60C275615CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 037CD3E207E7603EEB986393 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8EE1E391A2A0DD10D4A746FC;
+			remoteInfo = PowerUp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		38D570DAB1D7B9F884E86B0A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4484E3DCD2A124F43719B1A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5187C269FA59A2A8A8F9EAA9 /* PowerUpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerUpApp.swift; sourceTree = "<group>"; };
+		7A197A61B4DB00A0355669D2 /* PowerUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PowerUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A3C680B637B0CCB48502F04 /* PowerUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB664A385867DD05C29C895B /* PowerUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerUpTests.swift; sourceTree = "<group>"; };
+		DD1B385C7BA5696D390C948E /* HeroKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = HeroKit; path = ../../HeroKit; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		35BB3B824960FED6E9F7771F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B121483FF52309381CF56B4D /* HeroKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		315B2C345688937F76E61119 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				DB664A385867DD05C29C895B /* PowerUpTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		31B548ED6F8F0EF291124C5C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A3C680B637B0CCB48502F04 /* PowerUp.app */,
+				7A197A61B4DB00A0355669D2 /* PowerUpTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A033891EB5523056F7CDB01 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				DD1B385C7BA5696D390C948E /* HeroKit */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		7AB9D2ACCD77C82648F22B44 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				38D570DAB1D7B9F884E86B0A /* ContentView.swift */,
+				4484E3DCD2A124F43719B1A8 /* Info.plist */,
+				5187C269FA59A2A8A8F9EAA9 /* PowerUpApp.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		94C0A62F4BF9541B42FCF3FD = {
+			isa = PBXGroup;
+			children = (
+				3A033891EB5523056F7CDB01 /* Packages */,
+				7AB9D2ACCD77C82648F22B44 /* Sources */,
+				315B2C345688937F76E61119 /* Tests */,
+				31B548ED6F8F0EF291124C5C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		57C51275711A07F9F06CFFF4 /* PowerUpTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 932B7C978CA27C18A24E2327 /* Build configuration list for PBXNativeTarget "PowerUpTests" */;
+			buildPhases = (
+				1E1CA179965F2C424D18BDD5 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8A0C0AF4954000663AA73037 /* PBXTargetDependency */,
+			);
+			name = PowerUpTests;
+			packageProductDependencies = (
+			);
+			productName = PowerUpTests;
+			productReference = 7A197A61B4DB00A0355669D2 /* PowerUpTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8EE1E391A2A0DD10D4A746FC /* PowerUp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6075C9ABCCAD9E708397AB75 /* Build configuration list for PBXNativeTarget "PowerUp" */;
+			buildPhases = (
+				248F6CFA9AD6C9CA89C2E220 /* Sources */,
+				35BB3B824960FED6E9F7771F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PowerUp;
+			packageProductDependencies = (
+				1713A355B0311C4D8B5C0579 /* HeroKit */,
+			);
+			productName = PowerUp;
+			productReference = 8A3C680B637B0CCB48502F04 /* PowerUp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		037CD3E207E7603EEB986393 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					8EE1E391A2A0DD10D4A746FC = {
+						DevelopmentTeam = DU52C58N97;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 9E61D99D4E38A5DE99AB7252 /* Build configuration list for PBXProject "PowerUp" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 94C0A62F4BF9541B42FCF3FD;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				CAF3328CCBBA8FE14E964BDC /* XCLocalSwiftPackageReference "../../HeroKit" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 31B548ED6F8F0EF291124C5C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8EE1E391A2A0DD10D4A746FC /* PowerUp */,
+				57C51275711A07F9F06CFFF4 /* PowerUpTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1E1CA179965F2C424D18BDD5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				032C142E3F1EAA702D645F9C /* PowerUpTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		248F6CFA9AD6C9CA89C2E220 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA8FAFFF737D10A4266B5645 /* ContentView.swift in Sources */,
+				B2704B777D53664064AA5868 /* PowerUpApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8A0C0AF4954000663AA73037 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8EE1E391A2A0DD10D4A746FC /* PowerUp */;
+			targetProxy = AD09F43DB6CBB60C275615CC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0F9A95715FA855B4B3302C06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		1AC11158076CE8F1A7583680 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DU52C58N97;
+				INFOPLIST_FILE = Sources/Info.plist;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.powerup;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		6CB1220630154A89BC22B79E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.PowerUpTests;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PowerUp.app/PowerUp";
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		CC1FF0CBB215B0646622C848 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DU52C58N97;
+				INFOPLIST_FILE = Sources/Info.plist;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.powerup;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		CE3322BA5720CA974FEAB51C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		D7CEB564166640D4AFD13D1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.PowerUpTests;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PowerUp.app/PowerUp";
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6075C9ABCCAD9E708397AB75 /* Build configuration list for PBXNativeTarget "PowerUp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC1FF0CBB215B0646622C848 /* Debug */,
+				1AC11158076CE8F1A7583680 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		932B7C978CA27C18A24E2327 /* Build configuration list for PBXNativeTarget "PowerUpTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7CEB564166640D4AFD13D1C /* Debug */,
+				6CB1220630154A89BC22B79E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9E61D99D4E38A5DE99AB7252 /* Build configuration list for PBXProject "PowerUp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE3322BA5720CA974FEAB51C /* Debug */,
+				0F9A95715FA855B4B3302C06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		CAF3328CCBBA8FE14E964BDC /* XCLocalSwiftPackageReference "../../HeroKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../HeroKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1713A355B0311C4D8B5C0579 /* HeroKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HeroKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 037CD3E207E7603EEB986393 /* Project object */;
+}

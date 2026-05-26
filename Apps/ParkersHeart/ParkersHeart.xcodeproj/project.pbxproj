@@ -1,0 +1,442 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8E9A6212938A9E3FF895F40F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE917D4CCA590011EC0E43C /* ContentView.swift */; };
+		BB8EC3EB5A9344BED2C0806A /* HeroKit in Frameworks */ = {isa = PBXBuildFile; productRef = 87EC4F5A0F48ED92CC28315C /* HeroKit */; };
+		E0B0D7E861702374D984F68A /* ParkersHeartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925BE70F9ACCF1990F036DFC /* ParkersHeartTests.swift */; };
+		ED2F41F26EC4748AC90ACAF7 /* ParkersHeartApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF7ACBA5033DA926F03021E /* ParkersHeartApp.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3A68300C8EB2D8F23B40502C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 17AEF0F4FAC27EF21784E829 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0BB0BD33CF5BA4D1A2C5C10B;
+			remoteInfo = ParkersHeart;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3A05EBA16EA9178A2AF2848E /* HeroKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = HeroKit; path = ../../HeroKit; sourceTree = SOURCE_ROOT; };
+		4AE917D4CCA590011EC0E43C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7343F5375CD5B4D17BBE6D36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7CF7ACBA5033DA926F03021E /* ParkersHeartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkersHeartApp.swift; sourceTree = "<group>"; };
+		80EF966A9853FA85B3CA6A79 /* ParkersHeart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkersHeart.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		925BE70F9ACCF1990F036DFC /* ParkersHeartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkersHeartTests.swift; sourceTree = "<group>"; };
+		D1752CC85EB9061F840A7805 /* ParkersHeartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParkersHeartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9D517307A6647CCF8E8FC9E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB8EC3EB5A9344BED2C0806A /* HeroKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3CCAB75DC4937625329EC1A4 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				925BE70F9ACCF1990F036DFC /* ParkersHeartTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		50651A4C642D312AA5B8DC12 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				4AE917D4CCA590011EC0E43C /* ContentView.swift */,
+				7343F5375CD5B4D17BBE6D36 /* Info.plist */,
+				7CF7ACBA5033DA926F03021E /* ParkersHeartApp.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		7302613709C6AE3C6F2B5DE7 = {
+			isa = PBXGroup;
+			children = (
+				76BEDC7C170B1A818BE54E50 /* Packages */,
+				50651A4C642D312AA5B8DC12 /* Sources */,
+				3CCAB75DC4937625329EC1A4 /* Tests */,
+				AB76A08A32B8D827E80E9D42 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		76BEDC7C170B1A818BE54E50 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				3A05EBA16EA9178A2AF2848E /* HeroKit */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		AB76A08A32B8D827E80E9D42 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				80EF966A9853FA85B3CA6A79 /* ParkersHeart.app */,
+				D1752CC85EB9061F840A7805 /* ParkersHeartTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0BB0BD33CF5BA4D1A2C5C10B /* ParkersHeart */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BBC910F1074BF3DF37FD07F /* Build configuration list for PBXNativeTarget "ParkersHeart" */;
+			buildPhases = (
+				306307EF882FC02418CC95DD /* Sources */,
+				9D517307A6647CCF8E8FC9E7 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ParkersHeart;
+			packageProductDependencies = (
+				87EC4F5A0F48ED92CC28315C /* HeroKit */,
+			);
+			productName = ParkersHeart;
+			productReference = 80EF966A9853FA85B3CA6A79 /* ParkersHeart.app */;
+			productType = "com.apple.product-type.application";
+		};
+		20647B7AA1CC02F66D5EDD37 /* ParkersHeartTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F8833D37799C1516562ECEE /* Build configuration list for PBXNativeTarget "ParkersHeartTests" */;
+			buildPhases = (
+				1CDD22CCCFA0659184D1AA16 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FE33ED8D14C1D8C57076FF0B /* PBXTargetDependency */,
+			);
+			name = ParkersHeartTests;
+			packageProductDependencies = (
+			);
+			productName = ParkersHeartTests;
+			productReference = D1752CC85EB9061F840A7805 /* ParkersHeartTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		17AEF0F4FAC27EF21784E829 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					0BB0BD33CF5BA4D1A2C5C10B = {
+						DevelopmentTeam = DU52C58N97;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 73869E3C9C56044B39A64407 /* Build configuration list for PBXProject "ParkersHeart" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 7302613709C6AE3C6F2B5DE7;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				6C29A54B53313C0418060D38 /* XCLocalSwiftPackageReference "../../HeroKit" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = AB76A08A32B8D827E80E9D42 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0BB0BD33CF5BA4D1A2C5C10B /* ParkersHeart */,
+				20647B7AA1CC02F66D5EDD37 /* ParkersHeartTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1CDD22CCCFA0659184D1AA16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0B0D7E861702374D984F68A /* ParkersHeartTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		306307EF882FC02418CC95DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E9A6212938A9E3FF895F40F /* ContentView.swift in Sources */,
+				ED2F41F26EC4748AC90ACAF7 /* ParkersHeartApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FE33ED8D14C1D8C57076FF0B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0BB0BD33CF5BA4D1A2C5C10B /* ParkersHeart */;
+			targetProxy = 3A68300C8EB2D8F23B40502C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1A2F911308A62A7E2B3A51D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		4575E8E53C9B2E44BAF41FA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.ParkersHeartTests;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ParkersHeart.app/ParkersHeart";
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		7E416F8726AD2AACB12B6506 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.ParkersHeartTests;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ParkersHeart.app/ParkersHeart";
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		9865C20326E2E96D94A78CA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		9C4F67E95B0AF920B1E056D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DU52C58N97;
+				INFOPLIST_FILE = Sources/Info.plist;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.parkersheart;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		CEE17C1F4AD60AF88C360443 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DU52C58N97;
+				INFOPLIST_FILE = Sources/Info.plist;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.parkersheart;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1F8833D37799C1516562ECEE /* Build configuration list for PBXNativeTarget "ParkersHeartTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E416F8726AD2AACB12B6506 /* Debug */,
+				4575E8E53C9B2E44BAF41FA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5BBC910F1074BF3DF37FD07F /* Build configuration list for PBXNativeTarget "ParkersHeart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEE17C1F4AD60AF88C360443 /* Debug */,
+				9C4F67E95B0AF920B1E056D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		73869E3C9C56044B39A64407 /* Build configuration list for PBXProject "ParkersHeart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9865C20326E2E96D94A78CA8 /* Debug */,
+				1A2F911308A62A7E2B3A51D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		6C29A54B53313C0418060D38 /* XCLocalSwiftPackageReference "../../HeroKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../HeroKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		87EC4F5A0F48ED92CC28315C /* HeroKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HeroKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 17AEF0F4FAC27EF21784E829 /* Project object */;
+}

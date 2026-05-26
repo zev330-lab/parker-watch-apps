@@ -2,10 +2,10 @@ import SwiftUI
 import HeroKit
 
 @main
-struct RightNowApp: App {
+struct ParkersHeartApp: App {
     var body: some Scene {
         WindowGroup {
-            HeroGate(appKey: "rightnow", challenge: .selfAffirmation) {
+            HeroGate(appKey: "parkersheart", challenge: .selfAffirmation) {
                 ContentView()
             }
         }

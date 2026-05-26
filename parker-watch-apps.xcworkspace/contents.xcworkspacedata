@@ -1,34 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
-   <FileRef
-      location = "group:Apps/Omnitrix/Omnitrix.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Apps/RightNow/RightNow.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Apps/HappyThings/HappyThings.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Apps/DadMessages/DadMessages.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Apps/KaratePower/KaratePower.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Apps/SonicForms/SonicForms.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Apps/Transformers/Transformers.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Apps/SuperpowerWheel/SuperpowerWheel.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Apps/SecretMission/SecretMission.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:HeroKit">
-   </FileRef>
+   <FileRef location = "group:Apps/Omnitrix/Omnitrix.xcodeproj" />
+   <FileRef location = "group:Apps/RightNow/RightNow.xcodeproj" />
+   <FileRef location = "group:Apps/HeroGarage/HeroGarage.xcodeproj" />
+   <FileRef location = "group:Apps/ParkersHeart/ParkersHeart.xcodeproj" />
+   <FileRef location = "group:Apps/PowerUp/PowerUp.xcodeproj" />
+   <FileRef location = "group:HeroKit" />
 </Workspace>
