@@ -1,8 +1,6 @@
 import SwiftUI
+import AVFoundation
 import HeroKit
-
-// Parker's Heart — three pages: Happy Things · Dad Messages · My Superpowers
-// Navigate by swiping left/right between the pages.
 
 private let defaultHappyThings: [String] = [
     "Mom's hugs 🤗", "Dad's hugs 🤗",
@@ -14,25 +12,24 @@ private let defaultHappyThings: [String] = [
 ]
 
 private let defaultDadMessages: [String] = [
-    "I love you, Parker. ❤️",
-    "You are SO brave.",
-    "I'm thinking of you right now.",
+    "I love you, Parker.",
+    "You are so brave.",
+    "I am thinking of you right now.",
     "You make me so proud.",
-    "Have the best day ever! 🌟",
-    "You are strong AND kind.",
-    "I'll be home soon. 🏠",
-    "You're my favorite Parker.",
+    "Have the best day ever!",
+    "You are strong and kind.",
+    "I will be home soon.",
+    "You are my favorite Parker.",
 ]
+
+// MARK: - Root
 
 struct ContentView: View {
     var body: some View {
         TabView {
-            HappyPage()
-                .tag(0)
-            DadPage()
-                .tag(1)
-            SuperpowersPage()
-                .tag(2)
+            HappyPage().tag(0)
+            DadPage().tag(1)
+            SuperpowersPage().tag(2)
         }
         .tabViewStyle(.page)
         .background(Color.black.ignoresSafeArea())
@@ -43,7 +40,7 @@ struct ContentView: View {
 
 struct HappyPage: View {
     @State private var items: [String] = StorageKit.load([String].self, key: "heart.happy", default: defaultHappyThings)
-    @State private var current = "Tap ❤️ for something happy!"
+    @State private var current = "Tap for something happy!"
     @State private var scale: CGFloat = 1.0
     @State private var bgColor: Color = .purple
     private let colors: [Color] = [.purple, .pink, .orange, .blue, .green, .teal, .indigo]
@@ -54,7 +51,8 @@ struct HappyPage: View {
             bgColor.opacity(0.18).ignoresSafeArea()
             VStack(spacing: 6) {
                 Text("HAPPY THINGS")
-                    .font(.system(size: 8, weight: .bold)).foregroundColor(.white.opacity(0.4)).kerning(1)
+                    .font(.system(size: 8, weight: .bold))
+                    .foregroundColor(.white.opacity(0.4)).kerning(1)
                 Text("💛")
                     .font(.system(size: 28)).scaleEffect(scale)
                 Text(current)
@@ -75,87 +73,163 @@ struct HappyPage: View {
     }
 }
 
-// MARK: - Dad Messages
+// MARK: - Dad Messages (CloudKit + speech)
 
 struct DadPage: View {
-    @AppStorage("heart.dad.data") private var messagesData: Data = Data()
     @AppStorage("heart.dad.idx") private var msgIdx: Int = 0
     @State private var messages: [String] = []
+    @State private var isSyncing = false
     @State private var scale: CGFloat = 1.0
     @State private var heartPop = false
-    @State private var isEditing = false
+    @State private var isSpeaking = false
+
+    // Retain synthesizer — must be held strongly or speech stops mid-sentence
+    @State private var synth = AVSpeechSynthesizer()
 
     var body: some View {
         ZStack {
             Color(red: 0.04, green: 0.04, blue: 0.12).ignoresSafeArea()
-            if isEditing {
-                DadEditView(messages: $messages, onDone: {
-                    messagesData = (try? JSONEncoder().encode(messages)) ?? Data()
-                    isEditing = false
-                })
-            } else {
-                VStack(spacing: 5) {
+
+            VStack(spacing: 5) {
+                // Header + sync indicator
+                HStack(spacing: 4) {
                     Text("FROM DAD")
-                        .font(.system(size: 8, weight: .bold)).foregroundColor(.white.opacity(0.35)).kerning(1)
-                    Text("💌")
-                        .font(.system(size: 26))
-                        .overlay(
-                            Text("💛").font(.system(size: 12))
-                                .offset(x: 13, y: -13)
-                                .scaleEffect(heartPop ? 1.5 : 0)
-                                .opacity(heartPop ? 0 : 1)
-                                .animation(.spring(response: 0.35, dampingFraction: 0.5), value: heartPop)
-                        )
-                    Text(messages.isEmpty ? "No messages yet" : messages[safe: msgIdx] ?? messages[0])
-                        .font(.system(size: 12, weight: .medium, design: .rounded))
-                        .multilineTextAlignment(.center).foregroundColor(.white)
-                        .scaleEffect(scale).padding(.horizontal, 4)
-                    Text("tap for next")
-                        .font(.system(size: 8)).foregroundColor(.white.opacity(0.25))
+                        .font(.system(size: 8, weight: .bold))
+                        .foregroundColor(.white.opacity(0.35)).kerning(1)
+                    if isSyncing {
+                        ProgressView()
+                            .scaleEffect(0.5)
+                            .tint(.white.opacity(0.4))
+                    }
                 }
-                .onTapGesture { nextMsg() }
-                .onLongPressGesture(minimumDuration: 2.0) { HapticEngine.play(.success); isEditing = true }
+
+                // Envelope with floating heart
+                Text("💌")
+                    .font(.system(size: 26))
+                    .overlay(
+                        Text("💛").font(.system(size: 12))
+                            .offset(x: 13, y: -13)
+                            .scaleEffect(heartPop ? 1.5 : 0)
+                            .opacity(heartPop ? 0 : 1)
+                            .animation(.spring(response: 0.35, dampingFraction: 0.5), value: heartPop)
+                    )
+
+                // Message text
+                Text(currentMessage)
+                    .font(.system(size: 12, weight: .medium, design: .rounded))
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.white)
+                    .scaleEffect(scale)
+                    .padding(.horizontal, 4)
+
+                // Hint
+                HStack(spacing: 6) {
+                    Text(isSpeaking ? "🔊 speaking…" : "tap to hear it")
+                        .font(.system(size: 8))
+                        .foregroundColor(isSpeaking ? .white.opacity(0.6) : .white.opacity(0.25))
+                    if messages.count > 1 {
+                        Text("· swipe for next")
+                            .font(.system(size: 8))
+                            .foregroundColor(.white.opacity(0.2))
+                    }
+                }
             }
         }
-        .onAppear { loadMessages() }
+        .onTapGesture { handleTap() }
+        .gesture(
+            DragGesture(minimumDistance: 20)
+                .onEnded { g in
+                    // Horizontal swipe → next/prev message
+                    guard abs(g.translation.width) > abs(g.translation.height) else { return }
+                    stopSpeaking()
+                    if g.translation.width < 0 {
+                        advance(by: 1)
+                    } else {
+                        advance(by: -1)
+                    }
+                }
+        )
+        .onAppear { loadAndSync() }
+        .onDisappear { stopSpeaking() }
     }
 
-    private func nextMsg() {
+    private var currentMessage: String {
+        guard !messages.isEmpty else { return "Dad's sending love… 💛" }
+        return messages[safe: msgIdx] ?? messages[0]
+    }
+
+    private func handleTap() {
         guard !messages.isEmpty else { return }
         HapticEngine.play(.notification)
+
+        // Heart pop
         heartPop = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { heartPop = false }
+
+        // Scale bounce
         withAnimation(.spring(response: 0.25, dampingFraction: 0.5)) { scale = 1.1 }
         withAnimation(.spring(response: 0.4, dampingFraction: 0.7).delay(0.15)) { scale = 1.0 }
-        msgIdx = (msgIdx + 1) % messages.count
+
+        // Speak the message
+        speakCurrent()
     }
 
-    private func loadMessages() {
-        if let loaded = try? JSONDecoder().decode([String].self, from: messagesData), !loaded.isEmpty {
-            messages = loaded
-        } else {
-            messages = defaultDadMessages
+    private func speakCurrent() {
+        stopSpeaking()
+        let text = currentMessage
+        // Strip emoji before speaking — AVSpeechSynthesizer handles some but not all well
+        let clean = text.unicodeScalars
+            .filter { !$0.properties.isEmojiPresentation && !$0.properties.isEmoji || $0.value < 128 }
+            .reduce("") { $0 + String($1) }
+            .trimmingCharacters(in: .whitespaces)
+
+        let utterance = AVSpeechUtterance(string: clean.isEmpty ? text : clean)
+        utterance.rate = 0.42          // warm, slightly slower than default
+        utterance.pitchMultiplier = 1.08
+        utterance.volume = 1.0
+        // Pick the best available English voice
+        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+
+        isSpeaking = true
+        synth.speak(utterance)
+
+        // Clear speaking flag after estimated duration
+        let duration = Double(clean.count) * 0.065 + 0.8
+        DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
+            isSpeaking = false
         }
     }
-}
 
-struct DadEditView: View {
-    @Binding var messages: [String]
-    let onDone: () -> Void
+    private func stopSpeaking() {
+        if synth.isSpeaking { synth.stopSpeaking(at: .immediate) }
+        isSpeaking = false
+    }
 
-    var body: some View {
-        ScrollView {
-            VStack(spacing: 5) {
-                Text("Dad's Messages").font(.system(size: 11, weight: .bold)).foregroundColor(.white.opacity(0.6))
-                ForEach(messages.indices, id: \.self) { i in
-                    Text(messages[i]).font(.system(size: 10)).foregroundColor(.white)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(4).background(Color.white.opacity(0.07)).cornerRadius(5)
+    private func advance(by delta: Int) {
+        guard !messages.isEmpty else { return }
+        HapticEngine.play(.click)
+        msgIdx = ((msgIdx + delta) % messages.count + messages.count) % messages.count
+        withAnimation(.spring(response: 0.25, dampingFraction: 0.5)) { scale = 1.08 }
+        withAnimation(.spring(response: 0.4, dampingFraction: 0.7).delay(0.1)) { scale = 1.0 }
+    }
+
+    private func loadAndSync() {
+        // Show cached immediately
+        let cached = CloudKitMessageStore.loadCache()
+        messages = cached.isEmpty ? defaultDadMessages : cached
+
+        // Fetch fresh from CloudKit in background
+        isSyncing = true
+        Task {
+            if let fresh = await CloudKitMessageStore.fetch(), !fresh.isEmpty {
+                CloudKitMessageStore.cache(fresh)
+                await MainActor.run {
+                    messages = fresh
+                    // Keep index valid
+                    if msgIdx >= messages.count { msgIdx = 0 }
                 }
-                Button("Done ✓") { onDone() }
-                    .font(.system(size: 11, weight: .semibold)).foregroundColor(.green)
             }
-            .padding(5)
+            await MainActor.run { isSyncing = false }
         }
     }
 }
@@ -163,42 +237,43 @@ struct DadEditView: View {
 // MARK: - My Superpowers (affirmations)
 
 struct SuperpowersPage: View {
-    // Parker's own list — seeded from heroAffirmations, grows as he adds his own
     @State private var myPowers: [String] = StorageKit.load([String].self, key: "heart.superpowers", default: heroAffirmations)
     @State private var crownVal: Double = 0
     @State private var currentIdx: Int = 0
     @State private var lastIdx: Int = 0
     @State private var glowScale: CGFloat = 1.0
-    @State private var isAdding = false
+    private let gold = Color(red: 1, green: 0.85, blue: 0.2)
 
     var body: some View {
         ZStack {
             Color(red: 0.08, green: 0.05, blue: 0.02).ignoresSafeArea()
             VStack(spacing: 4) {
                 Text("MY SUPERPOWERS")
-                    .font(.system(size: 8, weight: .bold)).foregroundColor(Color(red:1,green:0.85,blue:0.2).opacity(0.6)).kerning(1)
+                    .font(.system(size: 8, weight: .bold))
+                    .foregroundColor(gold.opacity(0.6)).kerning(1)
                 Text("💛")
                     .font(.system(size: 22)).scaleEffect(glowScale)
-                Text(myPowers.isEmpty ? "Add a superpower!" : myPowers[currentIdx])
+                Text(myPowers.isEmpty ? "You have so many!" : myPowers[currentIdx])
                     .font(.system(size: 13, weight: .black, design: .rounded))
                     .multilineTextAlignment(.center).foregroundColor(.white)
                     .padding(.horizontal, 4)
                     .animation(.spring(response: 0.3, dampingFraction: 0.6), value: currentIdx)
                 Text("say it out loud ✨")
                     .font(.system(size: 8)).foregroundColor(.white.opacity(0.3))
-                Text("▲▼ Crown to scroll")
+                Text("▲▼ Crown to browse")
                     .font(.system(size: 7)).foregroundColor(.white.opacity(0.2))
             }
         }
         .focusable(true)
-        .digitalCrownRotation($crownVal, from: 0, through: Double(max(myPowers.count - 1, 0)),
-                               by: 1, sensitivity: .medium, isContinuous: true, isHapticFeedbackEnabled: true)
+        .digitalCrownRotation($crownVal,
+                               from: 0, through: Double(max(myPowers.count - 1, 0)),
+                               by: 1, sensitivity: .medium,
+                               isContinuous: true, isHapticFeedbackEnabled: true)
         .onChange(of: crownVal) { val in
             guard !myPowers.isEmpty else { return }
             let idx = ((Int(val.rounded()) % myPowers.count) + myPowers.count) % myPowers.count
             guard idx != lastIdx else { return }
-            lastIdx = idx
-            currentIdx = idx
+            lastIdx = idx; currentIdx = idx
             HapticEngine.play(.click)
             withAnimation(.spring(response: 0.2, dampingFraction: 0.4)) { glowScale = 1.2 }
             withAnimation(.spring(response: 0.35, dampingFraction: 0.6).delay(0.1)) { glowScale = 1.0 }

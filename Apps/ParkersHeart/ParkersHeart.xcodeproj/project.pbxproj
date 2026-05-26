@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30D112BEED5A274A1C971C72 /* DadCloudKitStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271A14251FAA71F414996E2E /* DadCloudKitStore.swift */; };
+		6835A3E4247BFBAE54C95B1A /* DadMessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEF3A86D0E10D99EABF19ED /* DadMessagesView.swift */; };
 		8E9A6212938A9E3FF895F40F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE917D4CCA590011EC0E43C /* ContentView.swift */; };
+		9142B25117287E70A82E9AAF /* CloudKitMessageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A2C6A99C5B876C34762EC2 /* CloudKitMessageStore.swift */; };
 		BB8EC3EB5A9344BED2C0806A /* HeroKit in Frameworks */ = {isa = PBXBuildFile; productRef = 87EC4F5A0F48ED92CC28315C /* HeroKit */; };
+		C04DBEC5EEE1D4CEAF9C3B88 /* DadMessagesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9175A0ECE4639B2513E30829 /* DadMessagesApp.swift */; };
 		E0B0D7E861702374D984F68A /* ParkersHeartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925BE70F9ACCF1990F036DFC /* ParkersHeartTests.swift */; };
 		ED2F41F26EC4748AC90ACAF7 /* ParkersHeartApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF7ACBA5033DA926F03021E /* ParkersHeartApp.swift */; };
 /* End PBXBuildFile section */
@@ -24,12 +28,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		242D99F40CCDF2076671ADE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		271A14251FAA71F414996E2E /* DadCloudKitStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadCloudKitStore.swift; sourceTree = "<group>"; };
 		3A05EBA16EA9178A2AF2848E /* HeroKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = HeroKit; path = ../../HeroKit; sourceTree = SOURCE_ROOT; };
+		3BEF3A86D0E10D99EABF19ED /* DadMessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadMessagesView.swift; sourceTree = "<group>"; };
 		4AE917D4CCA590011EC0E43C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		70EDCB033611529C6FFE6B26 /* ParkersHeart.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ParkersHeart.entitlements; sourceTree = "<group>"; };
 		7343F5375CD5B4D17BBE6D36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7CF7ACBA5033DA926F03021E /* ParkersHeartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkersHeartApp.swift; sourceTree = "<group>"; };
 		80EF966A9853FA85B3CA6A79 /* ParkersHeart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkersHeart.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D8A0DC9D43E682C100829B4 /* DadMessages.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = DadMessages.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9175A0ECE4639B2513E30829 /* DadMessagesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadMessagesApp.swift; sourceTree = "<group>"; };
 		925BE70F9ACCF1990F036DFC /* ParkersHeartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkersHeartTests.swift; sourceTree = "<group>"; };
+		A3D92E698800A3FBD868C8B9 /* DadMessages.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DadMessages.entitlements; sourceTree = "<group>"; };
+		B7A2C6A99C5B876C34762EC2 /* CloudKitMessageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitMessageStore.swift; sourceTree = "<group>"; };
 		D1752CC85EB9061F840A7805 /* ParkersHeartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParkersHeartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -56,8 +68,10 @@
 		50651A4C642D312AA5B8DC12 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B7A2C6A99C5B876C34762EC2 /* CloudKitMessageStore.swift */,
 				4AE917D4CCA590011EC0E43C /* ContentView.swift */,
 				7343F5375CD5B4D17BBE6D36 /* Info.plist */,
+				70EDCB033611529C6FFE6B26 /* ParkersHeart.entitlements */,
 				7CF7ACBA5033DA926F03021E /* ParkersHeartApp.swift */,
 			);
 			path = Sources;
@@ -66,6 +80,7 @@
 		7302613709C6AE3C6F2B5DE7 = {
 			isa = PBXGroup;
 			children = (
+				FD6A66834917DD70E9CF2BE3 /* DadSources */,
 				76BEDC7C170B1A818BE54E50 /* Packages */,
 				50651A4C642D312AA5B8DC12 /* Sources */,
 				3CCAB75DC4937625329EC1A4 /* Tests */,
@@ -84,10 +99,23 @@
 		AB76A08A32B8D827E80E9D42 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				8D8A0DC9D43E682C100829B4 /* DadMessages.app */,
 				80EF966A9853FA85B3CA6A79 /* ParkersHeart.app */,
 				D1752CC85EB9061F840A7805 /* ParkersHeartTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		FD6A66834917DD70E9CF2BE3 /* DadSources */ = {
+			isa = PBXGroup;
+			children = (
+				271A14251FAA71F414996E2E /* DadCloudKitStore.swift */,
+				A3D92E698800A3FBD868C8B9 /* DadMessages.entitlements */,
+				9175A0ECE4639B2513E30829 /* DadMessagesApp.swift */,
+				3BEF3A86D0E10D99EABF19ED /* DadMessagesView.swift */,
+				242D99F40CCDF2076671ADE7 /* Info.plist */,
+			);
+			path = DadSources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +158,23 @@
 			productReference = D1752CC85EB9061F840A7805 /* ParkersHeartTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		AD56F257DB9E795C6DE3F9C3 /* DadMessages */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE3442B28C4ECDBC37D305A6 /* Build configuration list for PBXNativeTarget "DadMessages" */;
+			buildPhases = (
+				DBE8747B57ACD2A860F6637F /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DadMessages;
+			packageProductDependencies = (
+			);
+			productName = DadMessages;
+			productReference = 8D8A0DC9D43E682C100829B4 /* DadMessages.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -140,6 +185,10 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					0BB0BD33CF5BA4D1A2C5C10B = {
+						DevelopmentTeam = DU52C58N97;
+						ProvisioningStyle = Automatic;
+					};
+					AD56F257DB9E795C6DE3F9C3 = {
 						DevelopmentTeam = DU52C58N97;
 						ProvisioningStyle = Automatic;
 					};
@@ -162,6 +211,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				AD56F257DB9E795C6DE3F9C3 /* DadMessages */,
 				0BB0BD33CF5BA4D1A2C5C10B /* ParkersHeart */,
 				20647B7AA1CC02F66D5EDD37 /* ParkersHeartTests */,
 			);
@@ -181,8 +231,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9142B25117287E70A82E9AAF /* CloudKitMessageStore.swift in Sources */,
 				8E9A6212938A9E3FF895F40F /* ContentView.swift in Sources */,
 				ED2F41F26EC4748AC90ACAF7 /* ParkersHeartApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBE8747B57ACD2A860F6637F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30D112BEED5A274A1C971C72 /* DadCloudKitStore.swift in Sources */,
+				C04DBEC5EEE1D4CEAF9C3B88 /* DadMessagesApp.swift in Sources */,
+				6835A3E4247BFBAE54C95B1A /* DadMessagesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,10 +303,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
@@ -271,6 +332,29 @@
 				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Release;
+		};
+		63B0947F4F609F9C1685CC2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DadSources/DadMessages.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DU52C58N97;
+				INFOPLIST_FILE = DadSources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.dadmessages;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
 		};
 		7E416F8726AD2AACB12B6506 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -342,11 +426,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -358,6 +442,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Sources/ParkersHeart.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DU52C58N97;
@@ -377,6 +462,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Sources/ParkersHeart.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DU52C58N97;
@@ -391,6 +477,29 @@
 				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Debug;
+		};
+		F4FDE30231E5B87D867E44D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DadSources/DadMessages.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DU52C58N97;
+				INFOPLIST_FILE = DadSources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.dadmessages;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -418,6 +527,15 @@
 			buildConfigurations = (
 				9865C20326E2E96D94A78CA8 /* Debug */,
 				1A2F911308A62A7E2B3A51D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		AE3442B28C4ECDBC37D305A6 /* Build configuration list for PBXNativeTarget "DadMessages" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63B0947F4F609F9C1685CC2F /* Debug */,
+				F4FDE30231E5B87D867E44D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
