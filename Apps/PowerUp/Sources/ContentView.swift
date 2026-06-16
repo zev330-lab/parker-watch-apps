@@ -1,8 +1,7 @@
 import SwiftUI
 import HeroKit
 
-// PowerUp — three pages: Center · Superpower · Mission
-// Swipe between pages. Crown used within each page.
+// PowerUp — three pages: Breathing · Superpower · Mission
 
 struct ContentView: View {
     var body: some View {
@@ -16,89 +15,133 @@ struct ContentView: View {
     }
 }
 
-// MARK: - Center (Karate breathing)
+// MARK: - Breathing
 
 private enum BreathPhase { case idle, inhale, hold, exhale, done }
 
+private let inhaleDur: Double = 4.0
+private let holdDur:   Double = 3.5
+private let exhaleDur: Double = 5.0
+private let totalRounds = 3
+
 struct CenterPage: View {
     @State private var phase: BreathPhase = .idle
-    @State private var breathCount = 0
-    @State private var sessions: Int = StorageKit.load(Int.self, key: "powerup.sessions", default: 0)
-    @State private var coreScale: CGFloat = 0.58
-    @State private var coreOpacity: Double = 0.65
-    @State private var glowR: CGFloat = 0
-
-    private let beltColors: [Color] = [.white, .yellow, .orange, .green, .blue, .purple, .brown, Color(red:0.1,green:0.1,blue:0.1)]
-    private var beltColor: Color { beltColors[min(sessions / 25, beltColors.count - 1)] }
-    private var beltName: String { ["White","Yellow","Orange","Green","Blue","Purple","Brown","Black"][min(sessions/25, 7)] }
+    @State private var round = 0
+    @State private var circleScale: CGFloat = 0.45
+    @State private var bgColor: Color = .blue
+    // Token approach: changing this UUID cancels any in-flight DispatchQueue chain
+    @State private var cycleToken = UUID()
 
     var body: some View {
         ZStack {
-            Color.black.ignoresSafeArea()
-            Circle().fill(beltColor.opacity(0.12)).frame(width: 110, height: 110).blur(radius: glowR)
+            bgColor.opacity(0.18).ignoresSafeArea()
+                .animation(.easeInOut(duration: 1), value: bgColor)
+
             Circle()
-                .fill(RadialGradient(colors:[beltColor.opacity(0.9),beltColor.opacity(0.25)], center:.center, startRadius:4, endRadius:40))
-                .frame(width:78,height:78).scaleEffect(coreScale).opacity(coreOpacity)
-            VStack {
-                HStack { Spacer()
-                    Text(beltName).font(.system(size:8,weight:.bold)).padding(3)
-                        .background(beltColor.opacity(0.25)).cornerRadius(4).padding(4)
-                }
-                Spacer()
-                phaseLabel.padding(.bottom, 8)
+                .fill(bgColor.opacity(0.35))
+                .frame(width: 130, height: 130)
+                .scaleEffect(circleScale)
+                .animation(.easeInOut(duration: phase == .inhale ? inhaleDur : phase == .exhale ? exhaleDur : 0.3), value: circleScale)
+
+            VStack(spacing: 10) {
+                phaseEmoji
+                    .font(.system(size: 36))
+                phaseText
+                    .font(.system(size: 22, weight: .black, design: .rounded))
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.white)
+                roundDots
             }
         }
-        .onTapGesture { handleTap() }
+        .onTapGesture {
+            if phase == .idle { startCycle(round: 0, token: newToken()) }
+            else if phase == .done { reset() }
+        }
+        .onDisappear {
+            // Cancel any in-flight breathing chain when user swipes away
+            cycleToken = UUID()
+            SpeechEngine.shared.stop()
+            if phase != .done { reset() }
+        }
     }
 
-    @ViewBuilder private var phaseLabel: some View {
+    @ViewBuilder private var phaseEmoji: some View {
+        switch phase {
+        case .idle:   Text("🌬️")
+        case .inhale: Text("⬆️")
+        case .hold:   Text("⏸️")
+        case .exhale: Text("⬇️")
+        case .done:   Text("💪")
+        }
+    }
+
+    @ViewBuilder private var phaseText: some View {
         switch phase {
         case .idle:
-            VStack(spacing:1) {
-                Text("CENTER").font(.system(size:10,weight:.bold)).foregroundColor(.white.opacity(0.7)).kerning(1.5)
-                Text("Tap to start").font(.system(size:9)).foregroundColor(.white.opacity(0.35))
+            VStack(spacing: 4) {
+                Text("Breathing").foregroundColor(.white.opacity(0.8))
+                Text("Tap to start").font(.system(size: 16)).foregroundColor(.white.opacity(0.4))
             }
-        case .inhale: Text("Breathe in…").font(.system(size:11,weight:.semibold,design:.rounded)).foregroundColor(beltColor)
-        case .hold:   Text("Hold…").font(.system(size:11,weight:.semibold,design:.rounded)).foregroundColor(.white.opacity(0.5))
-        case .exhale: Text("Breathe out…").font(.system(size:11,weight:.semibold,design:.rounded)).foregroundColor(beltColor.opacity(0.7))
-        case .done:
-            VStack(spacing:1) {
-                Text("Centered 💪").font(.system(size:11,weight:.bold,design:.rounded)).foregroundColor(.white)
-                Text("Tap to finish").font(.system(size:9)).foregroundColor(.white.opacity(0.35))
+        case .inhale: Text("Breathe IN").foregroundColor(.blue)
+        case .hold:   Text("Hold it").foregroundColor(.white.opacity(0.7))
+        case .exhale: Text("Breathe OUT").foregroundColor(.teal)
+        case .done:   Text("Great job!").foregroundColor(.green)
+        }
+    }
+
+    private var roundDots: some View {
+        HStack(spacing: 6) {
+            ForEach(0..<totalRounds, id: \.self) { i in
+                Circle()
+                    .fill(i < round ? Color.white : Color.white.opacity(0.2))
+                    .frame(width: 8, height: 8)
             }
         }
     }
 
-    private func handleTap() {
-        switch phase {
-        case .idle: startBreathing()
-        case .done: finishSession()
-        default: break
-        }
+    private func newToken() -> UUID {
+        let t = UUID(); cycleToken = t; return t
     }
 
-    private func startBreathing() {
-        breathCount = 0; phase = .inhale
+    private func startCycle(round r: Int, token: UUID) {
+        guard cycleToken == token else { return }
+        round = r
+        phase = .inhale; bgColor = .blue
+        circleScale = 1.0
         HapticEngine.play(.heartbeat)
-        withAnimation(.easeInOut(duration:3.5)) { coreScale=1.0; coreOpacity=1.0; glowR=20 }
-        DispatchQueue.main.asyncAfter(deadline:.now()+3.5) {
-            phase = .hold; HapticEngine.play(.click)
-            DispatchQueue.main.asyncAfter(deadline:.now()+1.5) {
-                phase = .exhale; HapticEngine.play(.heartbeat)
-                withAnimation(.easeInOut(duration:4.0)) { coreScale=0.58; coreOpacity=0.65; glowR=0 }
-                DispatchQueue.main.asyncAfter(deadline:.now()+4.0) {
-                    breathCount += 1
-                    if breathCount >= 5 { phase = .done; HapticEngine.play(.success) }
-                    else { phase = .inhale; startBreathing() }
+        SpeechEngine.shared.speak("Breathe in")
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + inhaleDur) {
+            guard self.cycleToken == token else { return }
+            self.phase = .hold; self.bgColor = .white
+            HapticEngine.play(.click)
+            SpeechEngine.shared.speak("Hold it")
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + holdDur) {
+                guard self.cycleToken == token else { return }
+                self.phase = .exhale; self.bgColor = .teal
+                self.circleScale = 0.45
+                HapticEngine.play(.heartbeat)
+                SpeechEngine.shared.speak("Breathe out")
+
+                DispatchQueue.main.asyncAfter(deadline: .now() + exhaleDur) {
+                    guard self.cycleToken == token else { return }
+                    let nextRound = r + 1
+                    if nextRound < totalRounds {
+                        self.startCycle(round: nextRound, token: token)
+                    } else {
+                        self.phase = .done; self.bgColor = .green
+                        self.round = totalRounds
+                        HapticEngine.play(.success)
+                        SpeechEngine.shared.speak("Great job! You did it!")
+                    }
                 }
             }
         }
     }
 
-    private func finishSession() {
-        sessions += 1; StorageKit.save(sessions, key:"powerup.sessions")
-        withAnimation(.spring(response:0.4,dampingFraction:0.5)) { coreScale=0.58; glowR=0 }
-        phase = .idle
+    private func reset() {
+        phase = .idle; bgColor = .blue; circleScale = 0.45; round = 0
     }
 }
 
@@ -134,152 +177,184 @@ struct SuperpowerPage: View {
     var body: some View {
         ZStack {
             wheelColors[currentIdx % wheelColors.count].opacity(bgOpacity).ignoresSafeArea()
-            VStack(spacing: 5) {
+            VStack(spacing: 8) {
                 Text(activated ? "⚡ ACTIVATED ⚡" : "Spin the Crown")
-                    .font(.system(size:9,weight:.bold)).foregroundColor(.white.opacity(0.45)).kerning(0.8)
+                    .font(.system(size: 13, weight: .bold))
+                    .foregroundColor(.white.opacity(0.5))
                 Text(superpowers[currentIdx])
-                    .font(.system(size:12,weight:.black,design:.rounded))
-                    .multilineTextAlignment(.center).foregroundColor(.white)
-                    .scaleEffect(activScale).padding(.horizontal,4).minimumScaleFactor(0.6)
-                if activated {
-                    Text("tap again for another").font(.system(size:8)).foregroundColor(.white.opacity(0.3))
-                }
+                    .font(.system(size: 20, weight: .black, design: .rounded))
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.white)
+                    .scaleEffect(activScale)
+                    .padding(.horizontal, 6)
+                    .minimumScaleFactor(0.7)
             }
         }
         .focusable(true)
-        .digitalCrownRotation($crownVal, from:0, through:Double(superpowers.count-1), by:1,
-                               sensitivity:.medium, isContinuous:true, isHapticFeedbackEnabled:true)
+        .digitalCrownRotation($crownVal, from: 0, through: Double(superpowers.count - 1), by: 1,
+                               sensitivity: .medium, isContinuous: true, isHapticFeedbackEnabled: true)
         .onChange(of: crownVal) { val in
             let idx = ((Int(val.rounded()) % superpowers.count) + superpowers.count) % superpowers.count
             guard idx != lastIdx else { return }
             lastIdx = idx; currentIdx = idx; activated = false
             HapticEngine.play(.click)
-            withAnimation(.easeOut(duration:0.1)) { bgOpacity = 0.05 }
+            withAnimation(.easeOut(duration: 0.1)) { bgOpacity = 0.05 }
         }
         .onTapGesture {
             HapticEngine.play(.surge); activated = true
-            withAnimation(.spring(response:0.2,dampingFraction:0.3)) { activScale=1.35; bgOpacity=0.28 }
-            withAnimation(.spring(response:0.5,dampingFraction:0.6).delay(0.2)) { activScale=1.0 }
-            withAnimation(.easeOut(duration:1.0).delay(0.5)) { bgOpacity=0.08 }
-            DispatchQueue.main.asyncAfter(deadline:.now()+0.3) { HapticEngine.play(.success) }
+            SpeechEngine.shared.speak(superpowers[currentIdx])
+            withAnimation(.spring(response: 0.2, dampingFraction: 0.3)) { activScale = 1.35; bgOpacity = 0.28 }
+            withAnimation(.spring(response: 0.5, dampingFraction: 0.6).delay(0.2)) { activScale = 1.0 }
+            withAnimation(.easeOut(duration: 1.0).delay(0.5)) { bgOpacity = 0.08 }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { HapticEngine.play(.success) }
         }
     }
 }
 
-// MARK: - Secret Mission Timer
+// MARK: - Mission
 
-private enum MissionState { case pick, running, complete }
-
-private let missionNames: [String] = [
-    "Get dressed 🕵️", "Brush teeth 🦷", "Put on shoes 👟",
-    "Clean up toys 🧸", "Eat breakfast 🥣", "Pack your bag 🎒",
-    "Super mission ⚡",
+private let missions: [String] = [
+    "Do 5 star jumps! ⭐",
+    "Roar like a T-Rex! 🦖",
+    "Spin around 3 times! 🌀",
+    "Do 10 hops! 🦘",
+    "Strike a superhero pose! 🦸",
+    "Flex those muscles! 💪",
+    "Do 5 push-ups! 🏋️",
+    "Jump as high as you can! 🚀",
+    "Make your best battle cry! ⚡",
+    "Do the silliest dance! 🕺",
+    "Run in place for 10 seconds! 🏃",
+    "Give someone a big hug! 🤗",
+    "Pretend you can fly! ✈️",
+    "Do 10 jumping jacks! 🏅",
+    "Balance on one foot! 🧘",
 ]
 
-struct MissionPage: View {
-    @State private var state: MissionState = .pick
-    @State private var missionIdx = 0
-    @State private var crownVal: Double = 0
-    @State private var secondsLeft = 0
-    @State private var ringProgress: Double = 0
-    @State private var pulseScale: CGFloat = 1.0
-    @State private var timer: Timer? = nil
-    @State private var durationIdx = 1
+private let missionColors: [Color] = [.orange, .red, .purple, .green, .blue, .pink, .teal, .yellow]
 
-    private let durations = [60, 120, 180, 300]
-    private var total: Int { durations[durationIdx] }
-    private var progress: Double { Double(total - secondsLeft) / Double(total) }
+private enum MissionState { case idle, doing, done }
+
+struct MissionPage: View {
+    @State private var missionIdx: Int = Int.random(in: 0..<missions.count)
+    @State private var colorIdx: Int = Int.random(in: 0..<missionColors.count)
+    @State private var state: MissionState = .idle
+    @State private var missionScale: CGFloat = 1.0
+    @State private var buttonScale: CGFloat = 1.0
+
+    private var accent: Color { missionColors[colorIdx % missionColors.count] }
 
     var body: some View {
         ZStack {
-            Color.black.ignoresSafeArea()
-            switch state {
-            case .pick:     pickView
-            case .running:  runView
-            case .complete: doneView
-            }
-        }
-        .focusable(state == .pick)
-        .digitalCrownRotation($crownVal, from:0, through:Double(missionNames.count-1),
-                               by:1, sensitivity:.medium, isContinuous:false, isHapticFeedbackEnabled:true)
-        .onChange(of: crownVal) { val in
-            guard state == .pick else { return }
-            missionIdx = Int(val.rounded())
-            HapticEngine.play(.click)
-        }
-        .onDisappear { timer?.invalidate() }
-    }
+            accent.opacity(state == .doing ? 0.22 : 0.10).ignoresSafeArea()
+                .animation(.easeInOut(duration: 0.4), value: state)
 
-    private var pickView: some View {
-        VStack(spacing: 5) {
-            Text("🕵️ MISSION").font(.system(size:9,weight:.bold)).foregroundColor(.green.opacity(0.7)).kerning(2)
-            Text(missionNames[missionIdx])
-                .font(.system(size:12,weight:.black,design:.monospaced))
-                .foregroundColor(.white).multilineTextAlignment(.center)
-            HStack(spacing:6) {
-                ForEach(0..<durations.count, id:\.self) { i in
-                    Text("\(durations[i]/60)m")
-                        .font(.system(size:10,weight:durationIdx==i ? .black:.light))
-                        .foregroundColor(durationIdx==i ? .green:.white.opacity(0.3))
-                        .onTapGesture { durationIdx=i; HapticEngine.play(.tap) }
+            VStack(spacing: 12) {
+                switch state {
+                case .idle, .doing:
+                    Text("⚡")
+                        .font(.system(size: 32))
+
+                    Text(missions[missionIdx])
+                        .font(.system(size: 20, weight: .black, design: .rounded))
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.white)
+                        .scaleEffect(missionScale)
+                        .padding(.horizontal, 6)
+                        .minimumScaleFactor(0.7)
+
+                    if state == .idle {
+                        HStack(spacing: 8) {
+                            Button(action: nextMission) {
+                                Text("Skip ▶")
+                                    .font(.system(size: 14, weight: .bold, design: .rounded))
+                                    .foregroundColor(.white.opacity(0.7))
+                                    .padding(.horizontal, 10)
+                                    .padding(.vertical, 6)
+                                    .background(Color.white.opacity(0.1))
+                                    .cornerRadius(10)
+                            }
+                            .buttonStyle(.plain)
+
+                            Button(action: startMission) {
+                                Text("DO IT! ⚡")
+                                    .font(.system(size: 14, weight: .black, design: .rounded))
+                                    .foregroundColor(.black)
+                                    .padding(.horizontal, 10)
+                                    .padding(.vertical, 6)
+                                    .background(accent)
+                                    .cornerRadius(10)
+                            }
+                            .buttonStyle(.plain)
+                            .scaleEffect(buttonScale)
+                        }
+                    } else {
+                        Button(action: completeMission) {
+                            Text("DONE! ✓")
+                                .font(.system(size: 16, weight: .black, design: .rounded))
+                                .foregroundColor(.black)
+                                .padding(.horizontal, 18)
+                                .padding(.vertical, 8)
+                                .background(accent)
+                                .cornerRadius(12)
+                        }
+                        .buttonStyle(.plain)
+                    }
+
+                case .done:
+                    Text("🏆")
+                        .font(.system(size: 44))
+                        .scaleEffect(missionScale)
+                    Text("MISSION\nCOMPLETE!")
+                        .font(.system(size: 20, weight: .black, design: .rounded))
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(accent)
+                    Button(action: resetMission) {
+                        Text("Next Mission ▶")
+                            .font(.system(size: 14, weight: .bold, design: .rounded))
+                            .foregroundColor(.black)
+                            .padding(.horizontal, 14)
+                            .padding(.vertical, 7)
+                            .background(accent)
+                            .cornerRadius(10)
+                    }
+                    .buttonStyle(.plain)
                 }
             }
-            Button(action: startMission) {
-                Text("GO").font(.system(size:11,weight:.bold)).foregroundColor(.black)
-                    .padding(.horizontal,14).padding(.vertical,5)
-                    .background(Color.green).cornerRadius(8)
-            }.buttonStyle(.plain)
         }
+        .onAppear { SpeechEngine.shared.speak(missions[missionIdx]) }
     }
 
-    private var runView: some View {
-        ZStack {
-            Circle().stroke(Color.green.opacity(0.15),lineWidth:6).frame(width:100,height:100)
-            Circle().trim(from:0,to:ringProgress)
-                .stroke(Color.green,style:StrokeStyle(lineWidth:6,lineCap:.round))
-                .frame(width:100,height:100).rotationEffect(.degrees(-90))
-                .animation(.linear(duration:1),value:ringProgress)
-            VStack(spacing:2) {
-                Text(String(format:"%d:%02d", secondsLeft/60, secondsLeft%60))
-                    .font(.system(size:22,weight:.black,design:.monospaced)).foregroundColor(.white).scaleEffect(pulseScale)
-                Text(missionNames[missionIdx])
-                    .font(.system(size:8)).foregroundColor(.green.opacity(0.8))
-                    .multilineTextAlignment(.center).lineLimit(2).frame(maxWidth:80)
-                Button("ABORT") { cancel() }.font(.system(size:8)).foregroundColor(.red.opacity(0.55)).buttonStyle(.plain)
-            }
-        }
-    }
-
-    private var doneView: some View {
-        VStack(spacing:5) {
-            Text("✅").font(.system(size:34)).scaleEffect(pulseScale)
-            Text("MISSION\nCOMPLETE!").font(.system(size:13,weight:.black,design:.monospaced)).foregroundColor(.green).multilineTextAlignment(.center)
-            Button("NEW") { state = .pick; HapticEngine.play(.tap) }
-                .font(.system(size:10,weight:.bold)).foregroundColor(.black)
-                .padding(.horizontal,8).padding(.vertical,3)
-                .background(Color.green).cornerRadius(6).buttonStyle(.plain)
-        }
+    private func nextMission() {
+        HapticEngine.play(.click)
+        missionIdx = (missionIdx + 1) % missions.count
+        colorIdx = (colorIdx + 1) % missionColors.count
+        SpeechEngine.shared.speak(missions[missionIdx])
+        withAnimation(.spring(response: 0.25, dampingFraction: 0.5)) { missionScale = 1.15 }
+        withAnimation(.spring(response: 0.4, dampingFraction: 0.7).delay(0.1)) { missionScale = 1.0 }
     }
 
     private func startMission() {
-        secondsLeft = total; ringProgress = 0; state = .running; HapticEngine.play(.surge)
-        timer = Timer.scheduledTimer(withTimeInterval:1, repeats:true) { _ in
-            secondsLeft -= 1; ringProgress = progress
-            if secondsLeft % 15 == 0 && secondsLeft > 0 {
-                HapticEngine.play(.heartbeat)
-                withAnimation(.spring(response:0.2,dampingFraction:0.4)) { pulseScale=1.15 }
-                withAnimation(.spring(response:0.4,dampingFraction:0.6).delay(0.1)) { pulseScale=1.0 }
-            }
-            if secondsLeft <= 0 { missionDone() }
-        }
+        HapticEngine.play(.surge)
+        state = .doing
+        SpeechEngine.shared.speak(missions[missionIdx])
+        withAnimation(.spring(response: 0.2, dampingFraction: 0.3)) { buttonScale = 1.2 }
+        withAnimation(.spring(response: 0.4, dampingFraction: 0.6).delay(0.1)) { buttonScale = 1.0 }
     }
 
-    private func missionDone() {
-        timer?.invalidate(); timer=nil; state = .complete; HapticEngine.play(.success)
-        DispatchQueue.main.asyncAfter(deadline:.now()+0.25) { HapticEngine.play(.success) }
-        withAnimation(.spring(response:0.3,dampingFraction:0.3)) { pulseScale=1.5 }
-        withAnimation(.spring(response:0.6,dampingFraction:0.5).delay(0.2)) { pulseScale=1.0 }
+    private func completeMission() {
+        state = .done
+        HapticEngine.play(.success)
+        SpeechEngine.shared.speak("Mission complete! You crushed it!")
+        withAnimation(.spring(response: 0.3, dampingFraction: 0.3)) { missionScale = 1.4 }
+        withAnimation(.spring(response: 0.6, dampingFraction: 0.5).delay(0.2)) { missionScale = 1.0 }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { HapticEngine.play(.heartbeat) }
     }
 
-    private func cancel() { timer?.invalidate(); timer=nil; state = .pick; HapticEngine.play(.retry) }
+    private func resetMission() {
+        HapticEngine.play(.click)
+        missionIdx = (missionIdx + 1) % missions.count
+        colorIdx = (colorIdx + 1) % missionColors.count
+        state = .idle
+    }
 }
