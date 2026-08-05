@@ -1,7 +1,6 @@
 import SwiftUI
 import HeroKit
 
-// Every phrase ends in "right now" — that's the rule.
 private let phrases: [String] = [
     "It's always\nright now.",
     "Still right\nnow.",
@@ -25,7 +24,6 @@ struct ContentView: View {
         ZStack {
             Color.black.ignoresSafeArea()
 
-            // Starburst ring on tap
             if starBurst {
                 Circle()
                     .stroke(Color.yellow.opacity(0.6), lineWidth: 2)
@@ -35,13 +33,13 @@ struct ContentView: View {
                     .animation(.easeOut(duration: 0.5), value: starBurst)
             }
 
-            VStack(spacing: 4) {
+            VStack(spacing: 6) {
                 Text("🕰️")
-                    .font(.system(size: 28))
+                    .font(.system(size: 36))
                     .scaleEffect(scale)
 
                 Text(phrases[index])
-                    .font(.system(size: 16, weight: .bold, design: .rounded))
+                    .font(.system(size: 22, weight: .bold, design: .rounded))
                     .multilineTextAlignment(.center)
                     .foregroundColor(.white)
                     .opacity(opacity)
@@ -55,20 +53,15 @@ struct ContentView: View {
     private func nextPhrase() {
         HapticEngine.play(.tap)
 
-        // Starburst ring
         starBurst = false
         withAnimation { starBurst = true }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { starBurst = false }
 
-        // Pop + crossfade to next phrase
-        withAnimation(.spring(response: 0.25, dampingFraction: 0.5)) {
-            scale = 1.15
-        }
-        withAnimation(.easeOut(duration: 0.15)) {
-            opacity = 0
-        }
+        withAnimation(.spring(response: 0.25, dampingFraction: 0.5)) { scale = 1.15 }
+        withAnimation(.easeOut(duration: 0.15)) { opacity = 0 }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
             index = (index + 1) % phrases.count
+            SpeechEngine.shared.speak(phrases[index])
             withAnimation(.easeIn(duration: 0.15)) { opacity = 1 }
             withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) { scale = 1.0 }
         }

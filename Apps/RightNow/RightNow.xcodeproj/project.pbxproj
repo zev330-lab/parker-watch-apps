@@ -7,13 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D34D85DCD5AE26A63BF8050 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCB0C890AC2CEB082C0F3F37 /* Foundation.framework */; };
 		4615C4D658F096B6476BB919 /* HeroKit in Frameworks */ = {isa = PBXBuildFile; productRef = 31BAC111A70695D68428AB8C /* HeroKit */; };
 		810DE34224CFC7BA12485309 /* RightNowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F1461014C6DE8879741350 /* RightNowApp.swift */; };
 		8309B897DE642C06ECD7DBA6 /* RightNowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385DDDBEF7FBCAF349FEEC6A /* RightNowTests.swift */; };
+		960D7EAD06B59ED74020FBC0 /* ComplicationWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2241DB6B83C3BE6A49F37192 /* ComplicationWidget.swift */; };
 		9C80817C80D30A41F057A53C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683AC06792A1DB133D60B6D /* ContentView.swift */; };
+		C02C724C25932CCEA834FDC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01BAF6F08E8C156647F40735 /* Assets.xcassets */; };
+		CBBBDAF2376EEB40303F118C /* RightNowComplication.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 621F405A83612AE8900E997D /* RightNowComplication.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		35D5A26EAE6ECC8F884609AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 656718192C6157A164957F25 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E8CF8D01435B5B5B0C2DBA7;
+			remoteInfo = RightNowComplication;
+		};
 		FC80FCB5E821C85388A15C34 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 656718192C6157A164957F25 /* Project object */;
@@ -23,13 +34,32 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CD39248FAC044B8B9D83DAF2 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CBBBDAF2376EEB40303F118C /* RightNowComplication.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		01BAF6F08E8C156647F40735 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2241DB6B83C3BE6A49F37192 /* ComplicationWidget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ComplicationWidget.swift; sourceTree = "<group>"; };
 		2A99D2162F0CD9618FD5A758 /* RightNowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RightNowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		385DDDBEF7FBCAF349FEEC6A /* RightNowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightNowTests.swift; sourceTree = "<group>"; };
+		621F405A83612AE8900E997D /* RightNowComplication.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RightNowComplication.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		7683AC06792A1DB133D60B6D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9E5EA17ABAA65552AE6D1D91 /* RightNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RightNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0F1461014C6DE8879741350 /* RightNowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightNowApp.swift; sourceTree = "<group>"; };
+		A5198A587621B42243E0D53C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A921CB33F95CEFD07D914FE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CCB0C890AC2CEB082C0F3F37 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS11.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		DC6E3C4FEF385F65917056FD /* HeroKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = HeroKit; path = ../../HeroKit; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -42,6 +72,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		113EDB239D52AD382FD321D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D34D85DCD5AE26A63BF8050 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -50,6 +88,7 @@
 			children = (
 				9E5EA17ABAA65552AE6D1D91 /* RightNow.app */,
 				2A99D2162F0CD9618FD5A758 /* RightNowTests.xctest */,
+				621F405A83612AE8900E997D /* RightNowComplication.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -62,15 +101,34 @@
 			name = Packages;
 			sourceTree = "<group>";
 		};
+		25D0D813ABB70D06912D253E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9050316FBFD45FA9E392E626 /* watchOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4448E0310837CE953CC7D370 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				01BAF6F08E8C156647F40735 /* Assets.xcassets */,
 				7683AC06792A1DB133D60B6D /* ContentView.swift */,
 				A921CB33F95CEFD07D914FE0 /* Info.plist */,
 				A0F1461014C6DE8879741350 /* RightNowApp.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
+		};
+		491DA4F729E8CC98FA8E518A /* Complication */ = {
+			isa = PBXGroup;
+			children = (
+				2241DB6B83C3BE6A49F37192 /* ComplicationWidget.swift */,
+				A5198A587621B42243E0D53C /* Info.plist */,
+			);
+			name = Complication;
+			path = "/Users/zevsteinmetz/dev/parker-watch-apps/Apps/RightNow/Complication";
+			sourceTree = "<absolute>";
 		};
 		66A1B252862CA02D02A59D57 = {
 			isa = PBXGroup;
@@ -79,7 +137,17 @@
 				4448E0310837CE953CC7D370 /* Sources */,
 				C5C905F21FE39800D47D1951 /* Tests */,
 				02A8EFCE5FBAC81EFAFBB002 /* Products */,
+				25D0D813ABB70D06912D253E /* Frameworks */,
+				491DA4F729E8CC98FA8E518A /* Complication */,
 			);
+			sourceTree = "<group>";
+		};
+		9050316FBFD45FA9E392E626 /* watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				CCB0C890AC2CEB082C0F3F37 /* Foundation.framework */,
+			);
+			name = watchOS;
 			sourceTree = "<group>";
 		};
 		C5C905F21FE39800D47D1951 /* Tests */ = {
@@ -105,8 +173,6 @@
 				9E9CC5AEAE994BF0D2222F9B /* PBXTargetDependency */,
 			);
 			name = RightNowTests;
-			packageProductDependencies = (
-			);
 			productName = RightNowTests;
 			productReference = 2A99D2162F0CD9618FD5A758 /* RightNowTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -116,11 +182,14 @@
 			buildConfigurationList = A3F8036604C169CF8E104375 /* Build configuration list for PBXNativeTarget "RightNow" */;
 			buildPhases = (
 				F8873ECC8CAC8E62F47D6FEA /* Sources */,
+				0F27D5629DB969819480E72D /* Resources */,
 				00940195F4B339A9FAEA9389 /* Frameworks */,
+				CD39248FAC044B8B9D83DAF2 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9A0E092BF05027EE86FA403D /* PBXTargetDependency */,
 			);
 			name = RightNow;
 			packageProductDependencies = (
@@ -129,6 +198,23 @@
 			productName = RightNow;
 			productReference = 9E5EA17ABAA65552AE6D1D91 /* RightNow.app */;
 			productType = "com.apple.product-type.application";
+		};
+		6E8CF8D01435B5B5B0C2DBA7 /* RightNowComplication */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE8FB8623EEF6F911816E70B /* Build configuration list for PBXNativeTarget "RightNowComplication" */;
+			buildPhases = (
+				5BE9BBCA117D45C9A235AC8E /* Sources */,
+				113EDB239D52AD382FD321D7 /* Frameworks */,
+				D6F73CEAAA2C4B7E6CDAE82F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RightNowComplication;
+			productName = RightNowComplication;
+			productReference = 621F405A83612AE8900E997D /* RightNowComplication.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -155,7 +241,7 @@
 			mainGroup = 66A1B252862CA02D02A59D57;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				0D4EBAF7AC18F25D5B9A9B24 /* XCLocalSwiftPackageReference "../../HeroKit" */,
+				0D4EBAF7AC18F25D5B9A9B24 /* XCLocalSwiftPackageReference "HeroKit" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 02A8EFCE5FBAC81EFAFBB002 /* Products */;
@@ -164,9 +250,28 @@
 			targets = (
 				5F9105DA0C7C2353BE05ADAB /* RightNow */,
 				27487209484D8247E97AEFC6 /* RightNowTests */,
+				6E8CF8D01435B5B5B0C2DBA7 /* RightNowComplication */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0F27D5629DB969819480E72D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C02C724C25932CCEA834FDC1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6F73CEAAA2C4B7E6CDAE82F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2293EF00ED48EC75C8FB9AF1 /* Sources */ = {
@@ -174,6 +279,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8309B897DE642C06ECD7DBA6 /* RightNowTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BE9BBCA117D45C9A235AC8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				960D7EAD06B59ED74020FBC0 /* ComplicationWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +302,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9A0E092BF05027EE86FA403D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RightNowComplication;
+			target = 6E8CF8D01435B5B5B0C2DBA7 /* RightNowComplication */;
+			targetProxy = 35D5A26EAE6ECC8F884609AA /* PBXContainerItemProxy */;
+		};
 		9E9CC5AEAE994BF0D2222F9B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5F9105DA0C7C2353BE05ADAB /* RightNow */;
@@ -354,6 +473,29 @@
 			};
 			name = Release;
 		};
+		C42911FDD49C724F514DB167 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DU52C58N97;
+				INFOPLIST_FILE = Complication/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.rightnow.complication;
+				PRODUCT_NAME = RightNowComplication;
+				SDKROOT = watchos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
 		D6F8C497E02469DE0FF2B18C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -372,6 +514,30 @@
 				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Debug;
+		};
+		DD40E6BA3C079DE70D819E9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DU52C58N97;
+				INFOPLIST_FILE = Complication/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.rightnow.complication;
+				PRODUCT_NAME = RightNowComplication;
+				SDKROOT = watchos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
 		};
 		FC4A58A6F00B64B9342D0A0B /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -422,10 +588,19 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
+		BE8FB8623EEF6F911816E70B /* Build configuration list for PBXNativeTarget "RightNowComplication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD40E6BA3C079DE70D819E9A /* Release */,
+				C42911FDD49C724F514DB167 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		0D4EBAF7AC18F25D5B9A9B24 /* XCLocalSwiftPackageReference "../../HeroKit" */ = {
+		0D4EBAF7AC18F25D5B9A9B24 /* XCLocalSwiftPackageReference "HeroKit" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../../HeroKit;
 		};

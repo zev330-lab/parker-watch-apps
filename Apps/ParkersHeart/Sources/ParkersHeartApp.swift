@@ -5,7 +5,8 @@ import HeroKit
 struct ParkersHeartApp: App {
     var body: some Scene {
         WindowGroup {
-            HeroGate(appKey: "parkersheart", challenge: .selfAffirmation) {
+            HeroGate(appKey: "parkersheart",
+                     challenges: [.giveCompliment, .putToyAway, .countToTen, .jumpingJacks]) {
                 ContentView()
             }
         }

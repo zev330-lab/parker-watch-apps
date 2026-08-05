@@ -7,17 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		308DB867E4BFB72369897E2B /* SuperpowersCloudKitStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E113D80B68DE1FB8F70B6742 /* SuperpowersCloudKitStore.swift */; };
 		30D112BEED5A274A1C971C72 /* DadCloudKitStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271A14251FAA71F414996E2E /* DadCloudKitStore.swift */; };
+		38435662E4A1BED91A1D85EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9AA6537592390DB2718FB3 /* Foundation.framework */; };
 		6835A3E4247BFBAE54C95B1A /* DadMessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEF3A86D0E10D99EABF19ED /* DadMessagesView.swift */; };
+		708FC34AD5C10D253295D4E6 /* HappyThingsCloudKitStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81116631D870A3138AF9978C /* HappyThingsCloudKitStore.swift */; };
+		790EC6A6F6AA3619F48B48DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180A81A9BA7F1CBBA2166D87 /* Assets.xcassets */; };
+		7AE2250BBD9C3A827A4BE6FE /* HappyThingsCloudKitStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81116631D870A3138AF9978C /* HappyThingsCloudKitStore.swift */; };
 		8E9A6212938A9E3FF895F40F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE917D4CCA590011EC0E43C /* ContentView.swift */; };
 		9142B25117287E70A82E9AAF /* CloudKitMessageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A2C6A99C5B876C34762EC2 /* CloudKitMessageStore.swift */; };
 		BB8EC3EB5A9344BED2C0806A /* HeroKit in Frameworks */ = {isa = PBXBuildFile; productRef = 87EC4F5A0F48ED92CC28315C /* HeroKit */; };
+		BF444086C0D90A1F2161BFA1 /* ComplicationWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4879FE34C48F1BB13549360 /* ComplicationWidget.swift */; };
 		C04DBEC5EEE1D4CEAF9C3B88 /* DadMessagesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9175A0ECE4639B2513E30829 /* DadMessagesApp.swift */; };
+		C08EC56B199C6CCE683610E5 /* SuperpowersCloudKitStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E113D80B68DE1FB8F70B6742 /* SuperpowersCloudKitStore.swift */; };
 		E0B0D7E861702374D984F68A /* ParkersHeartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925BE70F9ACCF1990F036DFC /* ParkersHeartTests.swift */; };
 		ED2F41F26EC4748AC90ACAF7 /* ParkersHeartApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF7ACBA5033DA926F03021E /* ParkersHeartApp.swift */; };
+		EDEBA276685F5B0746641C5F /* ParkersHeartComplication.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D92149706578DFCAB6AC4334 /* ParkersHeartComplication.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2BB3AC236F5E64F1DC1FBAD9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 17AEF0F4FAC27EF21784E829 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 79410D2E5B4D2C505E21AC58;
+			remoteInfo = ParkersHeartComplication;
+		};
 		3A68300C8EB2D8F23B40502C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 17AEF0F4FAC27EF21784E829 /* Project object */;
@@ -27,22 +42,43 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CDA636FAACE32D0C46CFC877 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				EDEBA276685F5B0746641C5F /* ParkersHeartComplication.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		180A81A9BA7F1CBBA2166D87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		242D99F40CCDF2076671ADE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		271A14251FAA71F414996E2E /* DadCloudKitStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadCloudKitStore.swift; sourceTree = "<group>"; };
 		3A05EBA16EA9178A2AF2848E /* HeroKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = HeroKit; path = ../../HeroKit; sourceTree = SOURCE_ROOT; };
 		3BEF3A86D0E10D99EABF19ED /* DadMessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadMessagesView.swift; sourceTree = "<group>"; };
 		4AE917D4CCA590011EC0E43C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5B9AA6537592390DB2718FB3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS11.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		70EDCB033611529C6FFE6B26 /* ParkersHeart.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ParkersHeart.entitlements; sourceTree = "<group>"; };
 		7343F5375CD5B4D17BBE6D36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7CF7ACBA5033DA926F03021E /* ParkersHeartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkersHeartApp.swift; sourceTree = "<group>"; };
 		80EF966A9853FA85B3CA6A79 /* ParkersHeart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkersHeart.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		81116631D870A3138AF9978C /* HappyThingsCloudKitStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappyThingsCloudKitStore.swift; sourceTree = "<group>"; };
 		8D8A0DC9D43E682C100829B4 /* DadMessages.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = DadMessages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9175A0ECE4639B2513E30829 /* DadMessagesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadMessagesApp.swift; sourceTree = "<group>"; };
 		925BE70F9ACCF1990F036DFC /* ParkersHeartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkersHeartTests.swift; sourceTree = "<group>"; };
 		A3D92E698800A3FBD868C8B9 /* DadMessages.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DadMessages.entitlements; sourceTree = "<group>"; };
 		B7A2C6A99C5B876C34762EC2 /* CloudKitMessageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitMessageStore.swift; sourceTree = "<group>"; };
 		D1752CC85EB9061F840A7805 /* ParkersHeartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParkersHeartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4879FE34C48F1BB13549360 /* ComplicationWidget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ComplicationWidget.swift; sourceTree = "<group>"; };
+		D92149706578DFCAB6AC4334 /* ParkersHeartComplication.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ParkersHeartComplication.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E113D80B68DE1FB8F70B6742 /* SuperpowersCloudKitStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperpowersCloudKitStore.swift; sourceTree = "<group>"; };
+		EFE0C7ABDDFB37E629EC0026 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +90,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9F2EFAC81138F2234A50C6C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38435662E4A1BED91A1D85EE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C0F272CC51E5077A100573A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6CA7AE20C332E33F6F116DB3 /* watchOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3CCAB75DC4937625329EC1A4 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -68,13 +120,24 @@
 		50651A4C642D312AA5B8DC12 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				180A81A9BA7F1CBBA2166D87 /* Assets.xcassets */,
 				B7A2C6A99C5B876C34762EC2 /* CloudKitMessageStore.swift */,
 				4AE917D4CCA590011EC0E43C /* ContentView.swift */,
+				81116631D870A3138AF9978C /* HappyThingsCloudKitStore.swift */,
 				7343F5375CD5B4D17BBE6D36 /* Info.plist */,
 				70EDCB033611529C6FFE6B26 /* ParkersHeart.entitlements */,
 				7CF7ACBA5033DA926F03021E /* ParkersHeartApp.swift */,
+				E113D80B68DE1FB8F70B6742 /* SuperpowersCloudKitStore.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		6CA7AE20C332E33F6F116DB3 /* watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				5B9AA6537592390DB2718FB3 /* Foundation.framework */,
+			);
+			name = watchOS;
 			sourceTree = "<group>";
 		};
 		7302613709C6AE3C6F2B5DE7 = {
@@ -85,6 +148,8 @@
 				50651A4C642D312AA5B8DC12 /* Sources */,
 				3CCAB75DC4937625329EC1A4 /* Tests */,
 				AB76A08A32B8D827E80E9D42 /* Products */,
+				1C0F272CC51E5077A100573A /* Frameworks */,
+				9EA8961CB717F168F37C7A42 /* Complication */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,12 +161,23 @@
 			name = Packages;
 			sourceTree = "<group>";
 		};
+		9EA8961CB717F168F37C7A42 /* Complication */ = {
+			isa = PBXGroup;
+			children = (
+				D4879FE34C48F1BB13549360 /* ComplicationWidget.swift */,
+				EFE0C7ABDDFB37E629EC0026 /* Info.plist */,
+			);
+			name = Complication;
+			path = "/Users/zevsteinmetz/dev/parker-watch-apps/Apps/ParkersHeart/Complication";
+			sourceTree = "<absolute>";
+		};
 		AB76A08A32B8D827E80E9D42 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				8D8A0DC9D43E682C100829B4 /* DadMessages.app */,
 				80EF966A9853FA85B3CA6A79 /* ParkersHeart.app */,
 				D1752CC85EB9061F840A7805 /* ParkersHeartTests.xctest */,
+				D92149706578DFCAB6AC4334 /* ParkersHeartComplication.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -126,11 +202,14 @@
 			buildConfigurationList = 5BBC910F1074BF3DF37FD07F /* Build configuration list for PBXNativeTarget "ParkersHeart" */;
 			buildPhases = (
 				306307EF882FC02418CC95DD /* Sources */,
+				F1141F2B554DC8C55EF81379 /* Resources */,
 				9D517307A6647CCF8E8FC9E7 /* Frameworks */,
+				CDA636FAACE32D0C46CFC877 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6BC4A97CCF15371872135DC7 /* PBXTargetDependency */,
 			);
 			name = ParkersHeart;
 			packageProductDependencies = (
@@ -152,11 +231,26 @@
 				FE33ED8D14C1D8C57076FF0B /* PBXTargetDependency */,
 			);
 			name = ParkersHeartTests;
-			packageProductDependencies = (
-			);
 			productName = ParkersHeartTests;
 			productReference = D1752CC85EB9061F840A7805 /* ParkersHeartTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		79410D2E5B4D2C505E21AC58 /* ParkersHeartComplication */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6022D9E48B4C6EC795BD919A /* Build configuration list for PBXNativeTarget "ParkersHeartComplication" */;
+			buildPhases = (
+				DD453B3FF30A8EA227E27A46 /* Sources */,
+				9F2EFAC81138F2234A50C6C4 /* Frameworks */,
+				660EBB39716BBDBC1E5DAA66 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ParkersHeartComplication;
+			productName = ParkersHeartComplication;
+			productReference = D92149706578DFCAB6AC4334 /* ParkersHeartComplication.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 		AD56F257DB9E795C6DE3F9C3 /* DadMessages */ = {
 			isa = PBXNativeTarget;
@@ -169,8 +263,6 @@
 			dependencies = (
 			);
 			name = DadMessages;
-			packageProductDependencies = (
-			);
 			productName = DadMessages;
 			productReference = 8D8A0DC9D43E682C100829B4 /* DadMessages.app */;
 			productType = "com.apple.product-type.application";
@@ -204,7 +296,7 @@
 			mainGroup = 7302613709C6AE3C6F2B5DE7;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				6C29A54B53313C0418060D38 /* XCLocalSwiftPackageReference "../../HeroKit" */,
+				6C29A54B53313C0418060D38 /* XCLocalSwiftPackageReference "HeroKit" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = AB76A08A32B8D827E80E9D42 /* Products */;
@@ -214,9 +306,28 @@
 				AD56F257DB9E795C6DE3F9C3 /* DadMessages */,
 				0BB0BD33CF5BA4D1A2C5C10B /* ParkersHeart */,
 				20647B7AA1CC02F66D5EDD37 /* ParkersHeartTests */,
+				79410D2E5B4D2C505E21AC58 /* ParkersHeartComplication */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		660EBB39716BBDBC1E5DAA66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1141F2B554DC8C55EF81379 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				790EC6A6F6AA3619F48B48DA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1CDD22CCCFA0659184D1AA16 /* Sources */ = {
@@ -233,7 +344,9 @@
 			files = (
 				9142B25117287E70A82E9AAF /* CloudKitMessageStore.swift in Sources */,
 				8E9A6212938A9E3FF895F40F /* ContentView.swift in Sources */,
+				708FC34AD5C10D253295D4E6 /* HappyThingsCloudKitStore.swift in Sources */,
 				ED2F41F26EC4748AC90ACAF7 /* ParkersHeartApp.swift in Sources */,
+				308DB867E4BFB72369897E2B /* SuperpowersCloudKitStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,12 +357,28 @@
 				30D112BEED5A274A1C971C72 /* DadCloudKitStore.swift in Sources */,
 				C04DBEC5EEE1D4CEAF9C3B88 /* DadMessagesApp.swift in Sources */,
 				6835A3E4247BFBAE54C95B1A /* DadMessagesView.swift in Sources */,
+				7AE2250BBD9C3A827A4BE6FE /* HappyThingsCloudKitStore.swift in Sources */,
+				C08EC56B199C6CCE683610E5 /* SuperpowersCloudKitStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD453B3FF30A8EA227E27A46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF444086C0D90A1F2161BFA1 /* ComplicationWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		6BC4A97CCF15371872135DC7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ParkersHeartComplication;
+			target = 79410D2E5B4D2C505E21AC58 /* ParkersHeartComplication */;
+			targetProxy = 2BB3AC236F5E64F1DC1FBAD9 /* PBXContainerItemProxy */;
+		};
 		FE33ED8D14C1D8C57076FF0B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0BB0BD33CF5BA4D1A2C5C10B /* ParkersHeart */;
@@ -333,6 +462,30 @@
 			};
 			name = Release;
 		};
+		4DF67FF131374A3A6E3C42C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DU52C58N97;
+				INFOPLIST_FILE = Complication/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.parkersheart.complication;
+				PRODUCT_NAME = ParkersHeartComplication;
+				SDKROOT = watchos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
 		63B0947F4F609F9C1685CC2F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -371,6 +524,29 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ParkersHeart.app/ParkersHeart";
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		82B2A683EBAB8324FC42DA0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DU52C58N97;
+				INFOPLIST_FILE = Complication/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.parkersheart.complication;
+				PRODUCT_NAME = ParkersHeartComplication;
+				SDKROOT = watchos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Debug;
@@ -522,6 +698,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
+		6022D9E48B4C6EC795BD919A /* Build configuration list for PBXNativeTarget "ParkersHeartComplication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4DF67FF131374A3A6E3C42C4 /* Release */,
+				82B2A683EBAB8324FC42DA0A /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		73869E3C9C56044B39A64407 /* Build configuration list for PBXProject "ParkersHeart" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -543,7 +728,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		6C29A54B53313C0418060D38 /* XCLocalSwiftPackageReference "../../HeroKit" */ = {
+		6C29A54B53313C0418060D38 /* XCLocalSwiftPackageReference "HeroKit" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../../HeroKit;
 		};

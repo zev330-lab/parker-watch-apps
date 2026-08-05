@@ -7,36 +7,75 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		351BE0D06CC881E06902625A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848B3BD8C927C4D7C3D940FC /* Foundation.framework */; };
 		4F8A0001000000000000DB00 /* OmnitrixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8A0001000000000000DA00 /* OmnitrixApp.swift */; };
 		4F8A0001000000000000DB01 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8A0001000000000000DA01 /* ContentView.swift */; };
 		4F8A0001000000000000DB02 /* Alien.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8A0001000000000000DA02 /* Alien.swift */; };
 		4F8A0001000000000000DB03 /* WatchFaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8A0001000000000000DA03 /* WatchFaceView.swift */; };
 		4F8A0001000000000000DB04 /* AlienSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8A0001000000000000DA04 /* AlienSelectorView.swift */; };
 		4F8A0001000000000000DB05 /* TransformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8A0001000000000000DA05 /* TransformView.swift */; };
+		4F8A0001000000000000DB06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F8A0001000000000000DA06 /* Assets.xcassets */; };
 		4F8A0001000000000000DB07 /* BattleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8A0001000000000000DA09 /* BattleService.swift */; };
 		4F8A0001000000000000DB08 /* BattleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8A0001000000000000DA0A /* BattleView.swift */; };
 		4F8A0001000000000000DB09 /* BattlePickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8A0001000000000000DA0B /* BattlePickView.swift */; };
 		4F8A0001000000000000DB0A /* BattleResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8A0001000000000000DA0C /* BattleResultView.swift */; };
-		4F8A0001000000000000DB06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F8A0001000000000000DA06 /* Assets.xcassets */; };
+		8D594B52B3AE9CA8DFC9E5C6 /* ComplicationWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EF5B3C748A71A261900ADE /* ComplicationWidget.swift */; };
+		C76829F18E417AFA1E15D31B /* OmnitrixComplication.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52F49178C1EC150286C6035F /* OmnitrixComplication.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F1928338EDE3A6B060C29F2B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F8A0001000000000000D000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 050E40B601ED5EEDAD51FB9C;
+			remoteInfo = OmnitrixComplication;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		090539F12ABB18D3644488C1 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C76829F18E417AFA1E15D31B /* OmnitrixComplication.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		4B6964CA20E5D7904594B98E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F8A0001000000000000DA00 /* OmnitrixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmnitrixApp.swift; sourceTree = "<group>"; };
 		4F8A0001000000000000DA01 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4F8A0001000000000000DA02 /* Alien.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alien.swift; sourceTree = "<group>"; };
 		4F8A0001000000000000DA03 /* WatchFaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchFaceView.swift; sourceTree = "<group>"; };
 		4F8A0001000000000000DA04 /* AlienSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlienSelectorView.swift; sourceTree = "<group>"; };
 		4F8A0001000000000000DA05 /* TransformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformView.swift; sourceTree = "<group>"; };
+		4F8A0001000000000000DA06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4F8A0001000000000000DA07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F8A0001000000000000DA08 /* Omnitrix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Omnitrix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F8A0001000000000000DA09 /* BattleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleService.swift; sourceTree = "<group>"; };
 		4F8A0001000000000000DA0A /* BattleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleView.swift; sourceTree = "<group>"; };
 		4F8A0001000000000000DA0B /* BattlePickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattlePickView.swift; sourceTree = "<group>"; };
 		4F8A0001000000000000DA0C /* BattleResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleResultView.swift; sourceTree = "<group>"; };
-		4F8A0001000000000000DA06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4F8A0001000000000000DA07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4F8A0001000000000000DA08 /* Omnitrix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Omnitrix.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52F49178C1EC150286C6035F /* OmnitrixComplication.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OmnitrixComplication.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		72EF5B3C748A71A261900ADE /* ComplicationWidget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ComplicationWidget.swift; sourceTree = "<group>"; };
+		848B3BD8C927C4D7C3D940FC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS11.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2458C2C8A54D8EC806D977E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				351BE0D06CC881E06902625A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4F8A0001000000000000D800 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -47,20 +86,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4F8A0001000000000000D900 /* MainGroup */ = {
+		3697384EB4117B9FCA7A389E /* Complication */ = {
+			isa = PBXGroup;
+			children = (
+				72EF5B3C748A71A261900ADE /* ComplicationWidget.swift */,
+				4B6964CA20E5D7904594B98E /* Info.plist */,
+			);
+			name = Complication;
+			path = "/Users/zevsteinmetz/dev/parker-watch-apps/Apps/Omnitrix/Complication";
+			sourceTree = "<absolute>";
+		};
+		4F8A0001000000000000D900 = {
 			isa = PBXGroup;
 			children = (
 				4F8A0001000000000000D910 /* OmnitrixWatch */,
 				4F8A0001000000000000D920 /* Products */,
+				DF4CBD1A87B9F9E0FC36F129 /* Frameworks */,
+				3697384EB4117B9FCA7A389E /* Complication */,
 			);
-			sourceTree = "<group>";
-		};
-		4F8A0001000000000000D920 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4F8A0001000000000000DA08 /* Omnitrix.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		4F8A0001000000000000D910 /* OmnitrixWatch */ = {
@@ -75,6 +118,15 @@
 				4F8A0001000000000000DA07 /* Info.plist */,
 			);
 			path = OmnitrixWatch;
+			sourceTree = "<group>";
+		};
+		4F8A0001000000000000D920 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4F8A0001000000000000DA08 /* Omnitrix.app */,
+				52F49178C1EC150286C6035F /* OmnitrixComplication.appex */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		4F8A0001000000000000D930 /* Models */ = {
@@ -98,9 +150,42 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		5C85D37C601700855C6089F2 /* watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				848B3BD8C927C4D7C3D940FC /* Foundation.framework */,
+			);
+			name = watchOS;
+			sourceTree = "<group>";
+		};
+		DF4CBD1A87B9F9E0FC36F129 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C85D37C601700855C6089F2 /* watchOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		050E40B601ED5EEDAD51FB9C /* OmnitrixComplication */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84698E5E83FB4632F5C52055 /* Build configuration list for PBXNativeTarget "OmnitrixComplication" */;
+			buildPhases = (
+				FACDBAA69C95B41F03B3A95B /* Sources */,
+				2458C2C8A54D8EC806D977E5 /* Frameworks */,
+				7536D3AF699DC7E7B37D7473 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OmnitrixComplication;
+			productName = OmnitrixComplication;
+			productReference = 52F49178C1EC150286C6035F /* OmnitrixComplication.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		4F8A0001000000000000D100 /* Omnitrix */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F8A0001000000000000D200 /* Build configuration list for PBXNativeTarget "Omnitrix" */;
@@ -108,10 +193,12 @@
 				4F8A0001000000000000D700 /* Sources */,
 				4F8A0001000000000000D800 /* Frameworks */,
 				4F8A0001000000000000D810 /* Resources */,
+				090539F12ABB18D3644488C1 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E5A80F1A630D634F24FC3E41 /* PBXTargetDependency */,
 			);
 			name = Omnitrix;
 			productName = Omnitrix;
@@ -147,6 +234,7 @@
 			projectRoot = "";
 			targets = (
 				4F8A0001000000000000D100 /* Omnitrix */,
+				050E40B601ED5EEDAD51FB9C /* OmnitrixComplication */,
 			);
 		};
 /* End PBXProject section */
@@ -157,6 +245,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F8A0001000000000000DB06 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7536D3AF699DC7E7B37D7473 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,9 +275,73 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FACDBAA69C95B41F03B3A95B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D594B52B3AE9CA8DFC9E5C6 /* ComplicationWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		E5A80F1A630D634F24FC3E41 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OmnitrixComplication;
+			target = 050E40B601ED5EEDAD51FB9C /* OmnitrixComplication */;
+			targetProxy = F1928338EDE3A6B060C29F2B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		1349559367E07BDB9853B347 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DU52C58N97;
+				INFOPLIST_FILE = Complication/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.omnitrix.complication;
+				PRODUCT_NAME = OmnitrixComplication;
+				SDKROOT = watchos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		4855A6970729F06F443937B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DU52C58N97;
+				INFOPLIST_FILE = Complication/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.omnitrix.complication;
+				PRODUCT_NAME = OmnitrixComplication;
+				SDKROOT = watchos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
 		4F8A0001000000000000D400 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -344,15 +503,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4F8A0001000000000000D300 /* Build configuration list for PBXProject "Omnitrix" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4F8A0001000000000000D400 /* Debug */,
-				4F8A0001000000000000D410 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4F8A0001000000000000D200 /* Build configuration list for PBXNativeTarget "Omnitrix" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -362,8 +512,25 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		4F8A0001000000000000D300 /* Build configuration list for PBXProject "Omnitrix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F8A0001000000000000D400 /* Debug */,
+				4F8A0001000000000000D410 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84698E5E83FB4632F5C52055 /* Build configuration list for PBXNativeTarget "OmnitrixComplication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1349559367E07BDB9853B347 /* Release */,
+				4855A6970729F06F443937B0 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
-
 	};
 	rootObject = 4F8A0001000000000000D000 /* Project object */;
 }

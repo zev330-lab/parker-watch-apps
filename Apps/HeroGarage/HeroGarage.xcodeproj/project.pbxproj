@@ -7,13 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03155D3F7BE60F70C92F0208 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A095E48511B152BDE9E55E8 /* Assets.xcassets */; };
 		0A14540E9648CC9195E19F60 /* HeroKit in Frameworks */ = {isa = PBXBuildFile; productRef = F74E0A2154328B1F47488BD3 /* HeroKit */; };
 		0A160AEE392AFB511CB74BE6 /* HeroGarageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051BD4ADBF3F5534D0A03C7 /* HeroGarageTests.swift */; };
 		0D608F2B5DFBA90B3985E03D /* HeroGarageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C810192B0E57F21FD6A61FDD /* HeroGarageApp.swift */; };
+		222B9EF8194025E63B1C9450 /* HeroGarageComplication.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 96A4D59E58E5F95C33F22A38 /* HeroGarageComplication.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		286849191CA266071A9FCEB5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECCBB219FD28673C6BBFD84 /* ContentView.swift */; };
+		3AA056C09CF0542A2731C60D /* ComplicationWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117279F7078937AC8C8BF03D /* ComplicationWidget.swift */; };
+		498E15E6ECAC5D67C86E372A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 592F2997503C8A6368ED87F7 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		28F53F6FB8C393BB8AD58A74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B73FFDFF29E3D46B7610D5D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8FB65358C1A822D6B597A44;
+			remoteInfo = HeroGarageComplication;
+		};
 		6F9417A83AFE5AA9B68DB489 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B73FFDFF29E3D46B7610D5D2 /* Project object */;
@@ -23,17 +34,44 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		FCBAB8446AE323B6351112C9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				222B9EF8194025E63B1C9450 /* HeroGarageComplication.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		04700E31E2409959C6C2A958 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		117279F7078937AC8C8BF03D /* ComplicationWidget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ComplicationWidget.swift; sourceTree = "<group>"; };
 		201A748E0008BE9DB8D2E0DA /* HeroGarage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeroGarage.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A095E48511B152BDE9E55E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		592F2997503C8A6368ED87F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS11.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		669FE57DFD4348F75F2B2DDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7E8CE3ECED517ACBB5664085 /* HeroKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = HeroKit; path = ../../HeroKit; sourceTree = SOURCE_ROOT; };
 		8ECCBB219FD28673C6BBFD84 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9051BD4ADBF3F5534D0A03C7 /* HeroGarageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroGarageTests.swift; sourceTree = "<group>"; };
+		96A4D59E58E5F95C33F22A38 /* HeroGarageComplication.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = HeroGarageComplication.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C810192B0E57F21FD6A61FDD /* HeroGarageApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroGarageApp.swift; sourceTree = "<group>"; };
 		E9B8D652AB7DFE2E8AC5D692 /* HeroGarageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeroGarageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5B37A68A1C20559B34B1D0F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				498E15E6ECAC5D67C86E372A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		73EE8A7AEBF236162E26C092 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -53,11 +91,20 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
+		525703E4A168B8D1E76603AC /* watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				592F2997503C8A6368ED87F7 /* Foundation.framework */,
+			);
+			name = watchOS;
+			sourceTree = "<group>";
+		};
 		5389235BBE870B49E31CE252 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				201A748E0008BE9DB8D2E0DA /* HeroGarage.app */,
 				E9B8D652AB7DFE2E8AC5D692 /* HeroGarageTests.xctest */,
+				96A4D59E58E5F95C33F22A38 /* HeroGarageComplication.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,12 +120,23 @@
 		9DD5E0102F9EFA92E73AF2BD /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				3A095E48511B152BDE9E55E8 /* Assets.xcassets */,
 				8ECCBB219FD28673C6BBFD84 /* ContentView.swift */,
 				C810192B0E57F21FD6A61FDD /* HeroGarageApp.swift */,
 				669FE57DFD4348F75F2B2DDA /* Info.plist */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
+		};
+		A5953F18C363D269C621008B /* Complication */ = {
+			isa = PBXGroup;
+			children = (
+				117279F7078937AC8C8BF03D /* ComplicationWidget.swift */,
+				04700E31E2409959C6C2A958 /* Info.plist */,
+			);
+			name = Complication;
+			path = "/Users/zevsteinmetz/dev/parker-watch-apps/Apps/HeroGarage/Complication";
+			sourceTree = "<absolute>";
 		};
 		B352828FC92B3DF2B396ADA0 = {
 			isa = PBXGroup;
@@ -87,7 +145,17 @@
 				9DD5E0102F9EFA92E73AF2BD /* Sources */,
 				23E9391D853B80D6A3825355 /* Tests */,
 				5389235BBE870B49E31CE252 /* Products */,
+				E5939BA4CF7D3E2CE7D2ABEF /* Frameworks */,
+				A5953F18C363D269C621008B /* Complication */,
 			);
+			sourceTree = "<group>";
+		};
+		E5939BA4CF7D3E2CE7D2ABEF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				525703E4A168B8D1E76603AC /* watchOS */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -98,11 +166,14 @@
 			buildConfigurationList = 5C11E6C2BCF2E7401969081A /* Build configuration list for PBXNativeTarget "HeroGarage" */;
 			buildPhases = (
 				3006C31F35005EA7564584E2 /* Sources */,
+				90A73B6C05AB0243D93F828A /* Resources */,
 				73EE8A7AEBF236162E26C092 /* Frameworks */,
+				FCBAB8446AE323B6351112C9 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				381AE4B0EF7F44D681724EB8 /* PBXTargetDependency */,
 			);
 			name = HeroGarage;
 			packageProductDependencies = (
@@ -111,6 +182,23 @@
 			productName = HeroGarage;
 			productReference = 201A748E0008BE9DB8D2E0DA /* HeroGarage.app */;
 			productType = "com.apple.product-type.application";
+		};
+		D8FB65358C1A822D6B597A44 /* HeroGarageComplication */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C5C06A6708AC16FD44FDA788 /* Build configuration list for PBXNativeTarget "HeroGarageComplication" */;
+			buildPhases = (
+				4F73A7BEC79EC227DF958D07 /* Sources */,
+				5B37A68A1C20559B34B1D0F9 /* Frameworks */,
+				85D130B3226F5FCC2CD12EA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HeroGarageComplication;
+			productName = HeroGarageComplication;
+			productReference = 96A4D59E58E5F95C33F22A38 /* HeroGarageComplication.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 		DAB58430E9833A2FCDA83920 /* HeroGarageTests */ = {
 			isa = PBXNativeTarget;
@@ -124,8 +212,6 @@
 				25332D4D1E5BE5B9140494DE /* PBXTargetDependency */,
 			);
 			name = HeroGarageTests;
-			packageProductDependencies = (
-			);
 			productName = HeroGarageTests;
 			productReference = E9B8D652AB7DFE2E8AC5D692 /* HeroGarageTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -155,7 +241,7 @@
 			mainGroup = B352828FC92B3DF2B396ADA0;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				D8DB84A187456B5322E1556F /* XCLocalSwiftPackageReference "../../HeroKit" */,
+				D8DB84A187456B5322E1556F /* XCLocalSwiftPackageReference "HeroKit" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 5389235BBE870B49E31CE252 /* Products */;
@@ -164,9 +250,28 @@
 			targets = (
 				A4C6095C5504029466C28062 /* HeroGarage */,
 				DAB58430E9833A2FCDA83920 /* HeroGarageTests */,
+				D8FB65358C1A822D6B597A44 /* HeroGarageComplication */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		85D130B3226F5FCC2CD12EA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90A73B6C05AB0243D93F828A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03155D3F7BE60F70C92F0208 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3006C31F35005EA7564584E2 /* Sources */ = {
@@ -175,6 +280,14 @@
 			files = (
 				286849191CA266071A9FCEB5 /* ContentView.swift in Sources */,
 				0D608F2B5DFBA90B3985E03D /* HeroGarageApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F73A7BEC79EC227DF958D07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AA056C09CF0542A2731C60D /* ComplicationWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +306,12 @@
 			isa = PBXTargetDependency;
 			target = A4C6095C5504029466C28062 /* HeroGarage */;
 			targetProxy = 6F9417A83AFE5AA9B68DB489 /* PBXContainerItemProxy */;
+		};
+		381AE4B0EF7F44D681724EB8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = HeroGarageComplication;
+			target = D8FB65358C1A822D6B597A44 /* HeroGarageComplication */;
+			targetProxy = 28F53F6FB8C393BB8AD58A74 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -291,6 +410,29 @@
 			};
 			name = Release;
 		};
+		761456971CBF60C6E840252B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DU52C58N97;
+				INFOPLIST_FILE = Complication/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.herogarage.complication;
+				PRODUCT_NAME = HeroGarageComplication;
+				SDKROOT = watchos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
 		8C0370CC68EA80BA09304FE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -373,6 +515,30 @@
 			};
 			name = Debug;
 		};
+		CDDDFA345E0363F168FA3DCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DU52C58N97;
+				INFOPLIST_FILE = Complication/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.herogarage.complication;
+				PRODUCT_NAME = HeroGarageComplication;
+				SDKROOT = watchos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
 		E711816DDE4EB8F4501FEAAD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -422,10 +588,19 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
+		C5C06A6708AC16FD44FDA788 /* Build configuration list for PBXNativeTarget "HeroGarageComplication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDDDFA345E0363F168FA3DCD /* Release */,
+				761456971CBF60C6E840252B /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		D8DB84A187456B5322E1556F /* XCLocalSwiftPackageReference "../../HeroKit" */ = {
+		D8DB84A187456B5322E1556F /* XCLocalSwiftPackageReference "HeroKit" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../../HeroKit;
 		};

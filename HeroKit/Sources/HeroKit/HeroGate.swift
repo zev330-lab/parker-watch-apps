@@ -20,14 +20,14 @@ public let heroAffirmations: [String] = [
 // MARK: - Challenge Type
 
 public enum HeroChallenge: String, Codable, CaseIterable {
-    case countToTen      = "count_to_ten"       // tap 10 times
-    case jumpingJacks    = "jumping_jacks"       // tap 10 times (physical)
-    case giveCompliment  = "give_compliment"     // confirm tap
-    case sayILoveYou     = "say_i_love_you"      // confirm tap
-    case putToyAway      = "put_toy_away"        // confirm tap
-    case forgiveSomeone  = "forgive_someone"     // confirm tap
-    case selfAffirmation = "self_affirmation"    // say something great about yourself
-    case deepBreath      = "deep_breath"         // 1 guided breath cycle (auto-completes)
+    case countToTen      = "count_to_ten"
+    case jumpingJacks    = "jumping_jacks"
+    case giveCompliment  = "give_compliment"
+    case sayILoveYou     = "say_i_love_you"
+    case putToyAway      = "put_toy_away"
+    case forgiveSomeone  = "forgive_someone"
+    case selfAffirmation = "self_affirmation"
+    case deepBreath      = "deep_breath"
 
     public var title: String {
         switch self {
@@ -70,7 +70,7 @@ public enum HeroChallenge: String, Codable, CaseIterable {
         case .sayILoveYou:    return .pink
         case .putToyAway:     return .teal
         case .forgiveSomeone: return .white
-        case .selfAffirmation:return Color(red: 1, green: 0.85, blue: 0.2) // warm gold
+        case .selfAffirmation:return Color(red: 1, green: 0.85, blue: 0.2)
         case .deepBreath:     return .cyan
         }
     }
@@ -80,15 +80,19 @@ public enum HeroChallenge: String, Codable, CaseIterable {
 
 public struct HeroGate<Content: View>: View {
     let appKey: String
-    let challenge: HeroChallenge
-    let accentColor: Color
+    let challengePool: [HeroChallenge]
+    let accentColorOverride: Color?
     @ViewBuilder let content: () -> Content
 
+    @Environment(\.scenePhase) private var scenePhase
+
     @State private var unlocked = false
+    @State private var activeChallenge: HeroChallenge = .giveCompliment
     @State private var tapsDone = 0
     @State private var phase: GatePhase = .challenge
     @State private var coreScale: CGFloat = 1.0
     @State private var celebrateScale: CGFloat = 1.0
+    @State private var bgPulse: CGFloat = 1.0
 
     // Affirmation gate state
     @State private var affirmationIndex: Int = 0
@@ -98,24 +102,30 @@ public struct HeroGate<Content: View>: View {
     @State private var breathPhase: BreathPhase = .ready
     @State private var breathScale: CGFloat = 0.55
     @State private var breathOpacity: Double = 0.6
+    @State private var breathId = UUID()
 
     private enum GatePhase { case challenge, celebrating }
     private enum BreathPhase { case ready, inhale, hold, exhale, done }
 
-    private var storageKey: String { "herogate.unlock.\(appKey)" }
-    private var todayString: String {
-        let f = DateFormatter(); f.dateFormat = "yyyy-MM-dd"; return f.string(from: Date())
-    }
-    private var todayAffirmationIndex: Int {
-        let cal = Calendar.current
-        return cal.ordinality(of: .day, in: .year, for: Date())! % heroAffirmations.count
-    }
+    private var accent: Color { accentColorOverride ?? activeChallenge.accentColor }
+    private var randomChallengeIndex: Int { Int.random(in: 0..<challengePool.count) }
+    private var randomAffirmationIndex: Int { Int.random(in: 0..<heroAffirmations.count) }
 
+    // Single fixed challenge (backwards compatibility)
     public init(appKey: String, challenge: HeroChallenge, accentColor: Color? = nil,
                 @ViewBuilder content: @escaping () -> Content) {
         self.appKey = appKey
-        self.challenge = challenge
-        self.accentColor = accentColor ?? challenge.accentColor
+        self.challengePool = [challenge]
+        self.accentColorOverride = accentColor
+        self.content = content
+    }
+
+    // Random challenge pool — picks a new one every foreground activation
+    public init(appKey: String, challenges: [HeroChallenge], accentColor: Color? = nil,
+                @ViewBuilder content: @escaping () -> Content) {
+        self.appKey = appKey
+        self.challengePool = challenges.isEmpty ? [.giveCompliment] : challenges
+        self.accentColorOverride = accentColor
         self.content = content
     }
 
@@ -128,10 +138,30 @@ public struct HeroGate<Content: View>: View {
             }
         }
         .onAppear {
-            let saved = UserDefaults.standard.string(forKey: storageKey) ?? ""
-            unlocked = (saved == todayString)
-            affirmationIndex = todayAffirmationIndex
-            affirmationCrown = Double(affirmationIndex)
+            resetGate()
+        }
+        .onChange(of: scenePhase) { newPhase in
+            if newPhase == .active && !unlocked {
+                resetGate()
+            }
+        }
+    }
+
+    // MARK: - Reset (called on every foreground)
+
+    private func resetGate() {
+        unlocked = false
+        tapsDone = 0
+        phase = .challenge
+        activeChallenge = challengePool[randomChallengeIndex]
+        affirmationIndex = randomAffirmationIndex
+        affirmationCrown = Double(affirmationIndex)
+        breathPhase = .ready
+        breathScale = 0.55
+        breathOpacity = 0.6
+        breathId = UUID()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            SpeechEngine.shared.speak(instructionText)
         }
     }
 
@@ -139,92 +169,96 @@ public struct HeroGate<Content: View>: View {
 
     private var gateView: some View {
         ZStack {
-            Color.black.ignoresSafeArea()
+            // Colored background matching the challenge
+            accent.opacity(0.18).ignoresSafeArea()
+            Color.black.opacity(0.55).ignoresSafeArea()
+
             if phase == .celebrating {
                 celebration
             } else {
-                switch challenge {
+                switch activeChallenge {
                 case .selfAffirmation: affirmationGate
-                case .deepBreath:      breathGate
+                case .deepBreath:      breathGate.id(breathId)
                 default:               standardGate
                 }
             }
         }
+        .animation(.easeInOut(duration: 0.4), value: activeChallenge.rawValue)
     }
 
     // MARK: - Standard tap gate
 
     private var standardGate: some View {
-        VStack(spacing: 5) {
-            Text("⚡ POWER UP")
-                .font(.system(size: 9, weight: .bold))
-                .foregroundColor(accentColor.opacity(0.7))
-                .kerning(1.5)
-
-            Text(challenge.emoji)
-                .font(.system(size: 28))
-                .scaleEffect(coreScale)
+        VStack(spacing: 10) {
+            ZStack {
+                Circle()
+                    .fill(accent.opacity(0.25))
+                    .frame(width: 80, height: 80)
+                Text(activeChallenge.emoji)
+                    .font(.system(size: 44))
+                    .scaleEffect(coreScale)
+            }
 
             Text(instructionText)
-                .font(.system(size: 11, weight: .semibold, design: .rounded))
+                .font(.system(size: 18, weight: .bold, design: .rounded))
                 .multilineTextAlignment(.center)
                 .foregroundColor(.white)
-                .padding(.horizontal, 4)
+                .minimumScaleFactor(0.8)
+                .padding(.horizontal, 8)
 
-            if challenge.tapCount > 1 {
+            if activeChallenge.tapCount > 1 {
                 tapDots
             }
 
             Button(action: handleStandardTap) {
                 Text(buttonLabel)
-                    .font(.system(size: 11, weight: .bold, design: .rounded))
+                    .font(.system(size: 16, weight: .bold, design: .rounded))
                     .foregroundColor(.black)
-                    .padding(.horizontal, 10)
-                    .padding(.vertical, 5)
-                    .background(tapsDone >= challenge.tapCount ? accentColor : accentColor.opacity(0.75))
-                    .cornerRadius(8)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 8)
+                    .background(tapsDone >= activeChallenge.tapCount ? accent : accent.opacity(0.75))
+                    .cornerRadius(12)
             }
             .buttonStyle(.plain)
         }
-        .padding(.vertical, 4)
     }
 
     private var tapDots: some View {
         HStack(spacing: 4) {
-            ForEach(0..<challenge.tapCount, id: \.self) { i in
+            ForEach(0..<activeChallenge.tapCount, id: \.self) { i in
                 Circle()
-                    .fill(i < tapsDone ? accentColor : Color.white.opacity(0.2))
+                    .fill(i < tapsDone ? accent : Color.white.opacity(0.2))
                     .frame(width: 7, height: 7)
             }
         }
     }
 
     private var instructionText: String {
-        switch challenge {
-        case .giveCompliment: return "Tell someone\nsomething nice about them."
-        case .sayILoveYou:    return "Say 'I love you'\nto someone!"
-        case .putToyAway:     return "Put one toy\nwhere it belongs."
-        case .forgiveSomeone: return "If you're mad at anyone,\nlet it go. 💛"
-        case .countToTen:     return "Tap the button\n10 times!"
-        case .jumpingJacks:   return "Do 10 jumping jacks —\ntap each one!"
-        default:              return challenge.title
+        switch activeChallenge {
+        case .giveCompliment: return "Say something nice to someone! 🌟"
+        case .sayILoveYou:    return "Say I love you to someone! ❤️"
+        case .putToyAway:     return "Put one toy away! 🧸"
+        case .forgiveSomeone: return "Let go of any anger. 🕊️"
+        case .countToTen:     return "Tap 10 times!"
+        case .jumpingJacks:   return "Do 10 jumping jacks!"
+        default:              return activeChallenge.title
         }
     }
 
     private var buttonLabel: String {
-        if challenge.tapCount == 1 { return "Done! ✓" }
-        if tapsDone >= challenge.tapCount { return "Unlock! ⚡" }
-        return tapsDone == 0 ? "Tap — go!" : "\(tapsDone) / \(challenge.tapCount)"
+        if activeChallenge.tapCount == 1 { return "Done! ✓" }
+        if tapsDone >= activeChallenge.tapCount { return "Unlock! ⚡" }
+        return tapsDone == 0 ? "Tap — go!" : "\(tapsDone) / \(activeChallenge.tapCount)"
     }
 
     private func handleStandardTap() {
         HapticEngine.play(.click)
         bump()
-        if challenge.tapCount == 1 {
+        if activeChallenge.tapCount == 1 {
             complete()
         } else {
             tapsDone += 1
-            if tapsDone >= challenge.tapCount {
+            if tapsDone >= activeChallenge.tapCount {
                 HapticEngine.play(.success)
                 complete()
             }
@@ -234,36 +268,39 @@ public struct HeroGate<Content: View>: View {
     // MARK: - Self-affirmation gate
 
     private var affirmationGate: some View {
-        VStack(spacing: 5) {
-            Text("Before you power up —")
-                .font(.system(size: 9, weight: .medium))
-                .foregroundColor(.white.opacity(0.5))
+        VStack(spacing: 8) {
+            ZStack {
+                Circle()
+                    .fill(accent.opacity(0.25))
+                    .frame(width: 70, height: 70)
+                Text(activeChallenge.emoji)
+                    .font(.system(size: 38))
+                    .scaleEffect(coreScale)
+            }
 
-            Text("Say this\nout loud: 💛")
-                .font(.system(size: 10, weight: .semibold))
-                .foregroundColor(accentColor.opacity(0.8))
-                .multilineTextAlignment(.center)
+            Text("Say this out loud:")
+                .font(.system(size: 13, weight: .medium))
+                .foregroundColor(.white.opacity(0.6))
 
             Text(heroAffirmations[affirmationIndex])
-                .font(.system(size: 14, weight: .black, design: .rounded))
+                .font(.system(size: 18, weight: .black, design: .rounded))
                 .multilineTextAlignment(.center)
                 .foregroundColor(.white)
-                .scaleEffect(coreScale)
                 .padding(.horizontal, 4)
                 .animation(.spring(response: 0.3, dampingFraction: 0.6), value: affirmationIndex)
 
             Text("▲▼ Crown to change")
-                .font(.system(size: 8))
+                .font(.system(size: 11))
                 .foregroundColor(.white.opacity(0.3))
 
             Button(action: { HapticEngine.play(.surge); complete() }) {
                 Text("I believe it! ✓")
-                    .font(.system(size: 11, weight: .bold, design: .rounded))
+                    .font(.system(size: 15, weight: .bold, design: .rounded))
                     .foregroundColor(.black)
-                    .padding(.horizontal, 10)
-                    .padding(.vertical, 5)
-                    .background(accentColor)
-                    .cornerRadius(8)
+                    .padding(.horizontal, 14)
+                    .padding(.vertical, 7)
+                    .background(accent)
+                    .cornerRadius(10)
             }
             .buttonStyle(.plain)
         }
@@ -340,6 +377,7 @@ public struct HeroGate<Content: View>: View {
 
     private func startBreathGate() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+            guard breathPhase == .ready else { return }
             breathPhase = .inhale
             HapticEngine.play(.heartbeat)
             withAnimation(.easeInOut(duration: 3.5)) {
@@ -347,9 +385,11 @@ public struct HeroGate<Content: View>: View {
                 breathOpacity = 1.0
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
+                guard breathPhase == .inhale else { return }
                 breathPhase = .hold
                 HapticEngine.play(.click)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                    guard breathPhase == .hold else { return }
                     breathPhase = .exhale
                     HapticEngine.play(.heartbeat)
                     withAnimation(.easeInOut(duration: 4.0)) {
@@ -357,6 +397,7 @@ public struct HeroGate<Content: View>: View {
                         breathOpacity = 0.6
                     }
                     DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
+                        guard breathPhase == .exhale else { return }
                         breathPhase = .done
                         complete()
                     }
@@ -368,15 +409,15 @@ public struct HeroGate<Content: View>: View {
     // MARK: - Celebration
 
     private var celebration: some View {
-        VStack(spacing: 6) {
+        VStack(spacing: 8) {
             Text("⚡")
-                .font(.system(size: 36))
+                .font(.system(size: 48))
                 .scaleEffect(celebrateScale)
             Text("POWERED UP!")
-                .font(.system(size: 13, weight: .black, design: .rounded))
-                .foregroundColor(accentColor)
+                .font(.system(size: 18, weight: .black, design: .rounded))
+                .foregroundColor(accent)
             Text("You earned it! 🎉")
-                .font(.system(size: 10))
+                .font(.system(size: 14))
                 .foregroundColor(.white.opacity(0.6))
         }
     }
@@ -394,7 +435,6 @@ public struct HeroGate<Content: View>: View {
         withAnimation(.spring(response: 0.3, dampingFraction: 0.3)) { celebrateScale = 1.5 }
         withAnimation(.spring(response: 0.6, dampingFraction: 0.5).delay(0.2)) { celebrateScale = 1.0 }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { HapticEngine.play(.success) }
-        UserDefaults.standard.set(todayString, forKey: storageKey)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.4) {
             withAnimation(.easeIn(duration: 0.2)) { unlocked = true }
         }

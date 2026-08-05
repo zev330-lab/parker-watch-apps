@@ -19,6 +19,11 @@ targets:
       - path: Sources
     entitlements:
       path: Sources/ParkersHeart.entitlements
+      properties:
+        com.apple.developer.icloud-container-identifiers:
+          - iCloud.com.zevgt.parkersheart
+        com.apple.developer.icloud-services:
+          - CloudKit
     settings:
       PRODUCT_BUNDLE_IDENTIFIER: com.zevgt.parkersheart
       DEVELOPMENT_TEAM: DU52C58N97
@@ -29,6 +34,7 @@ targets:
       SWIFT_EMIT_LOC_STRINGS: YES
       CURRENT_PROJECT_VERSION: "1"
       MARKETING_VERSION: "1.0"
+      ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
     dependencies:
       - package: HeroKit
     scheme:
@@ -53,8 +59,15 @@ targets:
     deploymentTarget: "16.0"
     sources:
       - path: DadSources
+      - path: Sources/HappyThingsCloudKitStore.swift
+      - path: Sources/SuperpowersCloudKitStore.swift
     entitlements:
       path: DadSources/DadMessages.entitlements
+      properties:
+        com.apple.developer.icloud-container-identifiers:
+          - iCloud.com.zevgt.parkersheart
+        com.apple.developer.icloud-services:
+          - CloudKit
     settings:
       PRODUCT_BUNDLE_IDENTIFIER: com.zevgt.dadmessages
       DEVELOPMENT_TEAM: DU52C58N97

@@ -5,7 +5,8 @@ import HeroKit
 struct RightNowApp: App {
     var body: some Scene {
         WindowGroup {
-            HeroGate(appKey: "rightnow", challenge: .selfAffirmation) {
+            HeroGate(appKey: "rightnow",
+                     challenges: [.giveCompliment, .putToyAway, .countToTen, .selfAffirmation]) {
                 ContentView()
             }
         }

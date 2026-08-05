@@ -8,12 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		032C142E3F1EAA702D645F9C /* PowerUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB664A385867DD05C29C895B /* PowerUpTests.swift */; };
+		2AA51B64026F67D1C3695468 /* PowerUpComplication.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2FCFFADE2C8A41618DB64068 /* PowerUpComplication.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3C879D242A113E7C759C27A2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2506F39246CEE137AE1110D1 /* Foundation.framework */; };
+		3D70D3B55666A3874C2E0D98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C96F9B6E64C90268CDE145C /* Assets.xcassets */; };
 		AA8FAFFF737D10A4266B5645 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D570DAB1D7B9F884E86B0A /* ContentView.swift */; };
 		B121483FF52309381CF56B4D /* HeroKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1713A355B0311C4D8B5C0579 /* HeroKit */; };
 		B2704B777D53664064AA5868 /* PowerUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5187C269FA59A2A8A8F9EAA9 /* PowerUpApp.swift */; };
+		E66F13F730D8A8ACC5391E86 /* ComplicationWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EFD82038EF55C3BD52354F /* ComplicationWidget.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		05380B3FB2046D0BCF1C31CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 037CD3E207E7603EEB986393 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C0662B79A8B587A038AE45A4;
+			remoteInfo = PowerUpComplication;
+		};
 		AD09F43DB6CBB60C275615CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 037CD3E207E7603EEB986393 /* Project object */;
@@ -23,12 +34,31 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6412B982298C713EA32023C8 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2AA51B64026F67D1C3695468 /* PowerUpComplication.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		2506F39246CEE137AE1110D1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS11.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		2FCFFADE2C8A41618DB64068 /* PowerUpComplication.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PowerUpComplication.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		30EFD82038EF55C3BD52354F /* ComplicationWidget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ComplicationWidget.swift; sourceTree = "<group>"; };
 		38D570DAB1D7B9F884E86B0A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4484E3DCD2A124F43719B1A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5187C269FA59A2A8A8F9EAA9 /* PowerUpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerUpApp.swift; sourceTree = "<group>"; };
+		6C96F9B6E64C90268CDE145C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A197A61B4DB00A0355669D2 /* PowerUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PowerUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A3C680B637B0CCB48502F04 /* PowerUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9330CDD36534E4DE9939244 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB664A385867DD05C29C895B /* PowerUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerUpTests.swift; sourceTree = "<group>"; };
 		DD1B385C7BA5696D390C948E /* HeroKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = HeroKit; path = ../../HeroKit; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -42,9 +72,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3CB6924E302EB7BCC8D5187D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C879D242A113E7C759C27A2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00F49D7CA7DEA9CFDCA7C426 /* Complication */ = {
+			isa = PBXGroup;
+			children = (
+				30EFD82038EF55C3BD52354F /* ComplicationWidget.swift */,
+				A9330CDD36534E4DE9939244 /* Info.plist */,
+			);
+			name = Complication;
+			path = "/Users/zevsteinmetz/dev/parker-watch-apps/Apps/PowerUp/Complication";
+			sourceTree = "<absolute>";
+		};
+		219FA0A9CC2B072D9C71A425 /* watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				2506F39246CEE137AE1110D1 /* Foundation.framework */,
+			);
+			name = watchOS;
+			sourceTree = "<group>";
+		};
 		315B2C345688937F76E61119 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +114,7 @@
 			children = (
 				8A3C680B637B0CCB48502F04 /* PowerUp.app */,
 				7A197A61B4DB00A0355669D2 /* PowerUpTests.xctest */,
+				2FCFFADE2C8A41618DB64068 /* PowerUpComplication.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,9 +127,18 @@
 			name = Packages;
 			sourceTree = "<group>";
 		};
+		6E9D4413D2FD20964C0AABE3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				219FA0A9CC2B072D9C71A425 /* watchOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7AB9D2ACCD77C82648F22B44 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				6C96F9B6E64C90268CDE145C /* Assets.xcassets */,
 				38D570DAB1D7B9F884E86B0A /* ContentView.swift */,
 				4484E3DCD2A124F43719B1A8 /* Info.plist */,
 				5187C269FA59A2A8A8F9EAA9 /* PowerUpApp.swift */,
@@ -87,6 +153,8 @@
 				7AB9D2ACCD77C82648F22B44 /* Sources */,
 				315B2C345688937F76E61119 /* Tests */,
 				31B548ED6F8F0EF291124C5C /* Products */,
+				6E9D4413D2FD20964C0AABE3 /* Frameworks */,
+				00F49D7CA7DEA9CFDCA7C426 /* Complication */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,8 +173,6 @@
 				8A0C0AF4954000663AA73037 /* PBXTargetDependency */,
 			);
 			name = PowerUpTests;
-			packageProductDependencies = (
-			);
 			productName = PowerUpTests;
 			productReference = 7A197A61B4DB00A0355669D2 /* PowerUpTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -116,11 +182,14 @@
 			buildConfigurationList = 6075C9ABCCAD9E708397AB75 /* Build configuration list for PBXNativeTarget "PowerUp" */;
 			buildPhases = (
 				248F6CFA9AD6C9CA89C2E220 /* Sources */,
+				80E357D3E026391D0FDF3D87 /* Resources */,
 				35BB3B824960FED6E9F7771F /* Frameworks */,
+				6412B982298C713EA32023C8 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				66202FEAFCAAFF5BCFE91CEE /* PBXTargetDependency */,
 			);
 			name = PowerUp;
 			packageProductDependencies = (
@@ -129,6 +198,23 @@
 			productName = PowerUp;
 			productReference = 8A3C680B637B0CCB48502F04 /* PowerUp.app */;
 			productType = "com.apple.product-type.application";
+		};
+		C0662B79A8B587A038AE45A4 /* PowerUpComplication */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBF4F37C159F385886C5D94D /* Build configuration list for PBXNativeTarget "PowerUpComplication" */;
+			buildPhases = (
+				87668CF909F6B42476EA16E6 /* Sources */,
+				3CB6924E302EB7BCC8D5187D /* Frameworks */,
+				B8EEABB875E3EFDAFC594DFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PowerUpComplication;
+			productName = PowerUpComplication;
+			productReference = 2FCFFADE2C8A41618DB64068 /* PowerUpComplication.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -155,7 +241,7 @@
 			mainGroup = 94C0A62F4BF9541B42FCF3FD;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				CAF3328CCBBA8FE14E964BDC /* XCLocalSwiftPackageReference "../../HeroKit" */,
+				CAF3328CCBBA8FE14E964BDC /* XCLocalSwiftPackageReference "HeroKit" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 31B548ED6F8F0EF291124C5C /* Products */;
@@ -164,9 +250,28 @@
 			targets = (
 				8EE1E391A2A0DD10D4A746FC /* PowerUp */,
 				57C51275711A07F9F06CFFF4 /* PowerUpTests */,
+				C0662B79A8B587A038AE45A4 /* PowerUpComplication */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		80E357D3E026391D0FDF3D87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D70D3B55666A3874C2E0D98 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8EEABB875E3EFDAFC594DFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1E1CA179965F2C424D18BDD5 /* Sources */ = {
@@ -186,9 +291,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		87668CF909F6B42476EA16E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E66F13F730D8A8ACC5391E86 /* ComplicationWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		66202FEAFCAAFF5BCFE91CEE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PowerUpComplication;
+			target = C0662B79A8B587A038AE45A4 /* PowerUpComplication */;
+			targetProxy = 05380B3FB2046D0BCF1C31CA /* PBXContainerItemProxy */;
+		};
 		8A0C0AF4954000663AA73037 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8EE1E391A2A0DD10D4A746FC /* PowerUp */;
@@ -197,6 +316,29 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0B88B7F4B95E4DF2977BEED3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DU52C58N97;
+				INFOPLIST_FILE = Complication/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.powerup.complication;
+				PRODUCT_NAME = PowerUpComplication;
+				SDKROOT = watchos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
 		0F9A95715FA855B4B3302C06 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -287,6 +429,30 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PowerUp.app/PowerUp";
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		9CE031CBE311A440767FBF38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DU52C58N97;
+				INFOPLIST_FILE = Complication/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zevgt.powerup.complication;
+				PRODUCT_NAME = PowerUpComplication;
+				SDKROOT = watchos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
 				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Release;
@@ -422,10 +588,19 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
+		EBF4F37C159F385886C5D94D /* Build configuration list for PBXNativeTarget "PowerUpComplication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CE031CBE311A440767FBF38 /* Release */,
+				0B88B7F4B95E4DF2977BEED3 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		CAF3328CCBBA8FE14E964BDC /* XCLocalSwiftPackageReference "../../HeroKit" */ = {
+		CAF3328CCBBA8FE14E964BDC /* XCLocalSwiftPackageReference "HeroKit" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../../HeroKit;
 		};
